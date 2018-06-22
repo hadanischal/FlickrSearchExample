@@ -17,10 +17,17 @@ class PhotosViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupUI()
 
         
     }
     
+    
+    func setupUI() {
+        self.title = "Flickr Search"
+        self.view.backgroundColor = ThemeColor.white
+    }
+
 }
 
 
