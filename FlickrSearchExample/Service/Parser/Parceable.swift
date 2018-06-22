@@ -41,6 +41,7 @@ final class ParserHelper {
     static func parse<T: Parceable>(data: Data, completion : (Result<T, ErrorResult>) -> Void) {
         do {
             if let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: AnyObject] {
+                print(dictionary)
                 switch T.parseObject(dictionary: dictionary) {
                 case .failure(let error):
                     completion(.failure(error))

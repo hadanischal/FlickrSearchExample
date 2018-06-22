@@ -9,7 +9,7 @@
 import Foundation
 
 struct APIConstants {
-    private static let baseURLString = "https://api.flickr.com/services/rest"
+     static let baseURLString = "https://api.flickr.com/services/rest"
 //    private static let photoSearch = "flickr.photos.search"
 //    private static let Key = "63f750f7c42662239caa7482194185b4"
 //    private static let Secret = "fd9869de82b522fa?"
