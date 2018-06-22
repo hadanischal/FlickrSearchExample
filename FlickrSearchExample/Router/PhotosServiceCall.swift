@@ -9,7 +9,7 @@
 import Foundation
 
 protocol PhotosServiceCallProtocol: class {
-    func fetchConverter(_ completion: @escaping ((Result<SearchResultsModel, ErrorResult>) -> Void))
+    func fetchPhotos(_ completion: @escaping ((Result<SearchResultsModel, ErrorResult>) -> Void))
 }
 
 final class PhotosServiceCall: NetworkHandler, PhotosServiceCallProtocol {
@@ -31,7 +31,7 @@ final class PhotosServiceCall: NetworkHandler, PhotosServiceCallProtocol {
         APIConstants.pageKey:            "1" //Default for now
     ]
     
-    func fetchConverter(_ completion: @escaping ((Result<SearchResultsModel, ErrorResult>) -> Void)) {
+    func fetchPhotos(_ completion: @escaping ((Result<SearchResultsModel, ErrorResult>) -> Void)) {
         self.cancelFetchService()
         task = NetworkService().loadData(urlString: endpoint, parameters: parameters, completion: self.networkResult(completion: completion))
     }

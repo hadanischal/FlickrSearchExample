@@ -29,12 +29,70 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9pU-yt-YQr">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="75.5" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoViewCell" id="ev1-3f-pLz" customClass="PhotoViewCell" customModule="FlickrSearchExample" customModuleProvider="target">
+                                        <rect key="frame" x="60" y="0.0" width="180" height="201"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="201"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTd-mS-4QR">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="201"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="exo-nV-jk9">
+                                                            <rect key="frame" x="0.0" y="0.0" width="180" height="181"/>
+                                                        </imageView>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N1R-03-3Z9">
+                                                            <rect key="frame" x="0.0" y="180" width="180" height="21"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFT-Uw-kZe">
+                                                                    <rect key="frame" x="5" y="0.0" width="170" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="aFT-Uw-kZe" secondAttribute="bottom" id="AEs-ab-5iL"/>
+                                                                <constraint firstItem="aFT-Uw-kZe" firstAttribute="leading" secondItem="N1R-03-3Z9" secondAttribute="leading" constant="5" id="HVO-c4-3Qu"/>
+                                                                <constraint firstAttribute="trailing" secondItem="aFT-Uw-kZe" secondAttribute="trailing" constant="5" id="HoJ-ki-MIN"/>
+                                                                <constraint firstAttribute="height" constant="21" id="Y7l-PF-RzW"/>
+                                                                <constraint firstItem="aFT-Uw-kZe" firstAttribute="top" secondItem="N1R-03-3Z9" secondAttribute="top" id="cTY-lU-5AT"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="exo-nV-jk9" secondAttribute="bottom" constant="20" id="1LB-H9-siW"/>
+                                                        <constraint firstItem="exo-nV-jk9" firstAttribute="top" secondItem="LTd-mS-4QR" secondAttribute="top" id="7Cp-sY-CwH"/>
+                                                        <constraint firstAttribute="trailing" secondItem="N1R-03-3Z9" secondAttribute="trailing" id="JLm-bU-yYs"/>
+                                                        <constraint firstAttribute="trailing" secondItem="exo-nV-jk9" secondAttribute="trailing" id="VON-fD-aiX"/>
+                                                        <constraint firstAttribute="bottom" secondItem="N1R-03-3Z9" secondAttribute="bottom" id="bCs-vN-c4E"/>
+                                                        <constraint firstItem="exo-nV-jk9" firstAttribute="leading" secondItem="LTd-mS-4QR" secondAttribute="leading" id="kPL-CV-CLE"/>
+                                                        <constraint firstItem="N1R-03-3Z9" firstAttribute="leading" secondItem="LTd-mS-4QR" secondAttribute="leading" id="ut6-GX-J0s"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="LTd-mS-4QR" secondAttribute="bottom" id="9K3-b6-OGP"/>
+                                            <constraint firstItem="LTd-mS-4QR" firstAttribute="top" secondItem="ev1-3f-pLz" secondAttribute="top" id="V4f-46-LUE"/>
+                                            <constraint firstItem="LTd-mS-4QR" firstAttribute="leading" secondItem="ev1-3f-pLz" secondAttribute="leading" id="ZIY-3A-6qm"/>
+                                            <constraint firstAttribute="trailing" secondItem="LTd-mS-4QR" secondAttribute="trailing" id="qAF-Cu-I4I"/>
+                                        </constraints>
+                                        <size key="customSize" width="180" height="201"/>
+                                        <connections>
+                                            <outlet property="bagroundView" destination="LTd-mS-4QR" id="xBJ-9a-PLf"/>
+                                            <outlet property="photoImageView" destination="exo-nV-jk9" id="V5y-yD-cqT"/>
+                                            <outlet property="titleLabel" destination="aFT-Uw-kZe" id="fIM-qL-eiF"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -73,4 +131,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="773.16341829085468"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="placeholder" width="112" height="112"/>
+    </resources>
 </document>

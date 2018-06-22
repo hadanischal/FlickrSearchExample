@@ -22,6 +22,13 @@
 		AF01834820DCDC4F001634B4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AF01834720DCDC4F001634B4 /* .gitignore */; };
 		AF01834B20DCE5F4001634B4 /* SearchResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01834A20DCE5F4001634B4 /* SearchResultsModel.swift */; };
 		AF01834D20DCE67B001634B4 /* JSONCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01834C20DCE67B001634B4 /* JSONCompatible.swift */; };
+		AF01834F20DCF696001634B4 /* PhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01834E20DCF696001634B4 /* PhotosViewModel.swift */; };
+		AF01835120DCF778001634B4 /* PhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01835020DCF778001634B4 /* PhotoViewCell.swift */; };
+		AF01835420DCF7F1001634B4 /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01835320DCF7F1001634B4 /* ThemeColor.swift */; };
+		AF01835620DCF994001634B4 /* PhotosViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01835520DCF994001634B4 /* PhotosViewDataSource.swift */; };
+		AF01835820DCFA25001634B4 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01835720DCFA25001634B4 /* UIColor.swift */; };
+		AF01835A20DCFEEF001634B4 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01835920DCFEEF001634B4 /* UIViewController.swift */; };
+		AF01835C20DCFFA9001634B4 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01835B20DCFFA9001634B4 /* ActivityIndicator.swift */; };
 		AF1634CC20DCBCA700D623E4 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1634CB20DCBCA700D623E4 /* PhotosViewController.swift */; };
 		AFF3EAD720DC923800D37692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3EAD620DC923800D37692 /* AppDelegate.swift */; };
 		AFF3EAD920DC923800D37692 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3EAD820DC923800D37692 /* ViewController.swift */; };
@@ -66,6 +73,13 @@
 		AF01834720DCDC4F001634B4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		AF01834A20DCE5F4001634B4 /* SearchResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsModel.swift; sourceTree = "<group>"; };
 		AF01834C20DCE67B001634B4 /* JSONCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCompatible.swift; sourceTree = "<group>"; };
+		AF01834E20DCF696001634B4 /* PhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewModel.swift; sourceTree = "<group>"; };
+		AF01835020DCF778001634B4 /* PhotoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewCell.swift; sourceTree = "<group>"; };
+		AF01835320DCF7F1001634B4 /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
+		AF01835520DCF994001634B4 /* PhotosViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewDataSource.swift; sourceTree = "<group>"; };
+		AF01835720DCFA25001634B4 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		AF01835920DCFEEF001634B4 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		AF01835B20DCFFA9001634B4 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		AF1634CB20DCBCA700D623E4 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		AFF3EAD320DC923700D37692 /* FlickrSearchExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrSearchExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF3EAD620DC923800D37692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +130,14 @@
 			path = APIConstants;
 			sourceTree = "<group>";
 		};
+		AF01835220DCF7C7001634B4 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				AF01835320DCF7F1001634B4 /* ThemeColor.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		AF1634C020DCBB4F00D623E4 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				AF01833120DCD020001634B4 /* DynamicValue.swift */,
+				AF01835B20DCFFA9001634B4 /* ActivityIndicator.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -153,6 +176,7 @@
 		AF1634C420DCBBC300D623E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AF01835020DCF778001634B4 /* PhotoViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -160,6 +184,8 @@
 		AF1634C520DCBBC300D623E4 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				AF01834E20DCF696001634B4 /* PhotosViewModel.swift */,
+				AF01835520DCF994001634B4 /* PhotosViewDataSource.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -184,6 +210,8 @@
 		AF1634C820DCBBC300D623E4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				AF01835720DCFA25001634B4 /* UIColor.swift */,
+				AF01835920DCFEEF001634B4 /* UIViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -278,6 +306,7 @@
 				AF1634CA20DCBBC300D623E4 /* Utils */,
 				AF1634C220DCBBC300D623E4 /* Helper */,
 				AF1634C820DCBBC300D623E4 /* Extension */,
+				AF01835220DCF7C7001634B4 /* Constants */,
 				AFF3EAD820DC923800D37692 /* ViewController.swift */,
 				AFF3EAE020DC923A00D37692 /* Assets.xcassets */,
 				AFF3EAE520DC923A00D37692 /* Info.plist */,
@@ -441,19 +470,26 @@
 				AF01834B20DCE5F4001634B4 /* SearchResultsModel.swift in Sources */,
 				AF01833A20DCD0BF001634B4 /* ErrorResult.swift in Sources */,
 				AF01833C20DCD109001634B4 /* Parceable.swift in Sources */,
+				AF01835420DCF7F1001634B4 /* ThemeColor.swift in Sources */,
 				AFF3EAD920DC923800D37692 /* ViewController.swift in Sources */,
 				AF01833420DCD063001634B4 /* ReachabilityError.swift in Sources */,
 				AF01833220DCD020001634B4 /* DynamicValue.swift in Sources */,
 				AF01833020DCCFC4001634B4 /* APIConstants.swift in Sources */,
+				AF01835820DCFA25001634B4 /* UIColor.swift in Sources */,
+				AF01835620DCF994001634B4 /* PhotosViewDataSource.swift in Sources */,
 				AF1634CC20DCBCA700D623E4 /* PhotosViewController.swift in Sources */,
 				AF01834020DCD15E001634B4 /* NetworkHandler.swift in Sources */,
+				AF01835A20DCFEEF001634B4 /* UIViewController.swift in Sources */,
 				AF01834620DCD2C1001634B4 /* PhotosModel.swift in Sources */,
+				AF01835C20DCFFA9001634B4 /* ActivityIndicator.swift in Sources */,
 				AFF3EAD720DC923800D37692 /* AppDelegate.swift in Sources */,
 				AF01834420DCD274001634B4 /* PhotosServiceCall.swift in Sources */,
 				AF01833620DCD07B001634B4 /* Reachability.swift in Sources */,
 				AF01834D20DCE67B001634B4 /* JSONCompatible.swift in Sources */,
+				AF01834F20DCF696001634B4 /* PhotosViewModel.swift in Sources */,
 				AF01833E20DCD14F001634B4 /* NetworkService.swift in Sources */,
 				AFF3EADF20DC923800D37692 /* FlickrSearchExample.xcdatamodeld in Sources */,
+				AF01835120DCF778001634B4 /* PhotoViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
