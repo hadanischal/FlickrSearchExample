@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF1634CC20DCBCA700D623E4 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1634CB20DCBCA700D623E4 /* PhotosViewController.swift */; };
+		AF1634D020DCBF9800D623E4 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1634CF20DCBF9800D623E4 /* APIConstants.swift */; };
 		AFF3EAD720DC923800D37692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3EAD620DC923800D37692 /* AppDelegate.swift */; };
 		AFF3EAD920DC923800D37692 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3EAD820DC923800D37692 /* ViewController.swift */; };
 		AFF3EADC20DC923800D37692 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFF3EADA20DC923800D37692 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		AF1634CB20DCBCA700D623E4 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		AF1634CF20DCBF9800D623E4 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		AFF3EAD320DC923700D37692 /* FlickrSearchExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrSearchExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF3EAD620DC923800D37692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFF3EAD820DC923800D37692 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,8 @@
 		AF1634C620DCBBC300D623E4 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				AFF3EADA20DC923800D37692 /* Main.storyboard */,
+				AFF3EAE220DC923A00D37692 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -146,6 +150,7 @@
 		AF1634C920DCBBC300D623E4 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				AF1634CE20DCBF8300D623E4 /* APIConstants */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -155,6 +160,14 @@
 			children = (
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		AF1634CE20DCBF8300D623E4 /* APIConstants */ = {
+			isa = PBXGroup;
+			children = (
+				AF1634CF20DCBF9800D623E4 /* APIConstants.swift */,
+			);
+			name = APIConstants;
 			sourceTree = "<group>";
 		};
 		AFF3EACA20DC923700D37692 = {
@@ -192,9 +205,7 @@
 				AF1634C220DCBBC300D623E4 /* Helper */,
 				AF1634C820DCBBC300D623E4 /* Extension */,
 				AFF3EAD820DC923800D37692 /* ViewController.swift */,
-				AFF3EADA20DC923800D37692 /* Main.storyboard */,
 				AFF3EAE020DC923A00D37692 /* Assets.xcassets */,
-				AFF3EAE220DC923A00D37692 /* LaunchScreen.storyboard */,
 				AFF3EAE520DC923A00D37692 /* Info.plist */,
 				AFF3EADD20DC923800D37692 /* FlickrSearchExample.xcdatamodeld */,
 			);
@@ -351,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFF3EAD920DC923800D37692 /* ViewController.swift in Sources */,
+				AF1634D020DCBF9800D623E4 /* APIConstants.swift in Sources */,
 				AF1634CC20DCBCA700D623E4 /* PhotosViewController.swift in Sources */,
 				AFF3EAD720DC923800D37692 /* AppDelegate.swift in Sources */,
 				AFF3EADF20DC923800D37692 /* FlickrSearchExample.xcdatamodeld in Sources */,
