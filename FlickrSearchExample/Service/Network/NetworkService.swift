@@ -18,7 +18,8 @@ final class NetworkService {
         components.queryItems = parameters.map { (key, value) in
             URLQueryItem(name: key, value: value)
         }
-        components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")        
+        components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
+        print(components.url!)
         var request = NetworkMethod.request(method: .GET, url: components.url!)
         if let reachability = Reachability(), !reachability.isReachable {
             request.cachePolicy = .returnCacheDataDontLoad

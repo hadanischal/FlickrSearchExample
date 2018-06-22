@@ -9,16 +9,15 @@
 import Foundation
 
 protocol PhotosServiceCallProtocol: class {
-    func fetchConverter(_ completion: @escaping ((Result<PhotosModel, ErrorResult>) -> Void))
+    func fetchConverter(_ completion: @escaping ((Result<SearchResultsModel, ErrorResult>) -> Void))
 }
 
 final class PhotosServiceCall: NetworkHandler, PhotosServiceCallProtocol {
     static let shared = PhotosServiceCall()
     let endpoint = APIConstants.baseURLString
-    let searchText = "Temp"
-    static let escapedSearchText: String = "Temp".addingPercentEncoding(withAllowedCharacters:.urlHostAllowed)!
-    
-  //  let urlString: String = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(APIConstants.apiKeyValue)&tags=\(escapedSearchText)&per_page=25&format=json&nojsoncallback=1"
+   
+    //static let escapedSearchText: String = "Temp".addingPercentEncoding(withAllowedCharacters:.urlHostAllowed)!
+   // let urlString: String = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(APIConstants.apiKeyValue)&tags=\(escapedSearchText)&per_page=25&format=json&nojsoncallback=1"
 
     var task : URLSessionTask?
     let parameters : [String: String] = [
@@ -32,7 +31,7 @@ final class PhotosServiceCall: NetworkHandler, PhotosServiceCallProtocol {
         APIConstants.pageKey:            "1" //Default for now
     ]
     
-    func fetchConverter(_ completion: @escaping ((Result<PhotosModel, ErrorResult>) -> Void)) {
+    func fetchConverter(_ completion: @escaping ((Result<SearchResultsModel, ErrorResult>) -> Void)) {
         self.cancelFetchService()
         task = NetworkService().loadData(urlString: endpoint, parameters: parameters, completion: self.networkResult(completion: completion))
     }
