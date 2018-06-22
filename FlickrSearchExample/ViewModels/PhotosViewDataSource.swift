@@ -30,4 +30,4 @@ class PhotosViewDataSource: GenericDataSource<PhotosModel>, UICollectionViewData
     }
 }
 
-//ImageHelper().updateImageForCollectionViewCell(cell, inCollectionView: collectionView, imageURL: feedsValue.imageRef, atIndexPath: indexPath)
+ 

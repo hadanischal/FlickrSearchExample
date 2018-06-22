@@ -27,6 +27,7 @@
 		AF01835420DCF7F1001634B4 /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01835320DCF7F1001634B4 /* ThemeColor.swift */; };
 		AF01835620DCF994001634B4 /* PhotosViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01835520DCF994001634B4 /* PhotosViewDataSource.swift */; };
 		AF01835820DCFA25001634B4 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01835720DCFA25001634B4 /* UIColor.swift */; };
+		AF01835A20DCFEEF001634B4 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01835920DCFEEF001634B4 /* UIViewController.swift */; };
 		AF1634CC20DCBCA700D623E4 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1634CB20DCBCA700D623E4 /* PhotosViewController.swift */; };
 		AFF3EAD720DC923800D37692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3EAD620DC923800D37692 /* AppDelegate.swift */; };
 		AFF3EAD920DC923800D37692 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3EAD820DC923800D37692 /* ViewController.swift */; };
@@ -76,6 +77,7 @@
 		AF01835320DCF7F1001634B4 /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
 		AF01835520DCF994001634B4 /* PhotosViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewDataSource.swift; sourceTree = "<group>"; };
 		AF01835720DCFA25001634B4 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		AF01835920DCFEEF001634B4 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		AF1634CB20DCBCA700D623E4 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		AFF3EAD320DC923700D37692 /* FlickrSearchExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrSearchExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF3EAD620DC923800D37692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				AF01835720DCFA25001634B4 /* UIColor.swift */,
+				AF01835920DCFEEF001634B4 /* UIViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				AF01835620DCF994001634B4 /* PhotosViewDataSource.swift in Sources */,
 				AF1634CC20DCBCA700D623E4 /* PhotosViewController.swift in Sources */,
 				AF01834020DCD15E001634B4 /* NetworkHandler.swift in Sources */,
+				AF01835A20DCFEEF001634B4 /* UIViewController.swift in Sources */,
 				AF01834620DCD2C1001634B4 /* PhotosModel.swift in Sources */,
 				AFF3EAD720DC923800D37692 /* AppDelegate.swift in Sources */,
 				AF01834420DCD274001634B4 /* PhotosServiceCall.swift in Sources */,
