@@ -17,10 +17,11 @@ final class PhotosServiceCall: NetworkHandler, PhotosServiceCallProtocol {
     let endpoint = APIConstants.baseURLString
     let searchText = "Temp"
     static let escapedSearchText: String = "Temp".addingPercentEncoding(withAllowedCharacters:.urlHostAllowed)!
-    let urlString: String = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(APIConstants.apiKeyValue)&tags=\(escapedSearchText)&per_page=25&format=json&nojsoncallback=1"
+    
+  //  let urlString: String = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(APIConstants.apiKeyValue)&tags=\(escapedSearchText)&per_page=25&format=json&nojsoncallback=1"
 
     var task : URLSessionTask?
-    let parameters : [String: Any] = [
+    let parameters : [String: String] = [
         APIConstants.methodKey:          APIConstants.flickrMethod,
         APIConstants.apiKey:             APIConstants.apiKeyValue,
         APIConstants.nojsoncallbackKey:  "1",
@@ -33,7 +34,7 @@ final class PhotosServiceCall: NetworkHandler, PhotosServiceCallProtocol {
     
     func fetchConverter(_ completion: @escaping ((Result<PhotosModel, ErrorResult>) -> Void)) {
         self.cancelFetchService()
-        task = NetworkService().loadData(urlString: urlString, parameters: parameters, completion: self.networkResult(completion: completion))
+        task = NetworkService().loadData(urlString: endpoint, parameters: parameters, completion: self.networkResult(completion: completion))
     }
     
     func cancelFetchService() {
