@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF01833020DCCFC4001634B4 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01832F20DCCFC4001634B4 /* APIConstants.swift */; };
 		AF1634CC20DCBCA700D623E4 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1634CB20DCBCA700D623E4 /* PhotosViewController.swift */; };
-		AF1634D020DCBF9800D623E4 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1634CF20DCBF9800D623E4 /* APIConstants.swift */; };
 		AFF3EAD720DC923800D37692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3EAD620DC923800D37692 /* AppDelegate.swift */; };
 		AFF3EAD920DC923800D37692 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3EAD820DC923800D37692 /* ViewController.swift */; };
 		AFF3EADC20DC923800D37692 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFF3EADA20DC923800D37692 /* Main.storyboard */; };
@@ -37,8 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF01832F20DCCFC4001634B4 /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		AF1634CB20DCBCA700D623E4 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
-		AF1634CF20DCBF9800D623E4 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		AFF3EAD320DC923700D37692 /* FlickrSearchExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrSearchExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF3EAD620DC923800D37692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFF3EAD820DC923800D37692 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF01832E20DCCFC4001634B4 /* APIConstants */ = {
+			isa = PBXGroup;
+			children = (
+				AF01832F20DCCFC4001634B4 /* APIConstants.swift */,
+			);
+			path = APIConstants;
+			sourceTree = "<group>";
+		};
 		AF1634C020DCBB4F00D623E4 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,7 +158,11 @@
 		AF1634C920DCBBC300D623E4 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				AF1634CE20DCBF8300D623E4 /* APIConstants */,
+				AF01832E20DCCFC4001634B4 /* APIConstants */,
+				AF1634D520DCCF2000D623E4 /* Network */,
+				AF1634D420DCCF2000D623E4 /* Parser */,
+				AF1634D220DCCF2000D623E4 /* Reachability */,
+				AF1634D320DCCF2000D623E4 /* Result */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -162,12 +174,32 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		AF1634CE20DCBF8300D623E4 /* APIConstants */ = {
+		AF1634D220DCCF2000D623E4 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
-				AF1634CF20DCBF9800D623E4 /* APIConstants.swift */,
 			);
-			name = APIConstants;
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		AF1634D320DCCF2000D623E4 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		AF1634D420DCCF2000D623E4 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		AF1634D520DCCF2000D623E4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		AFF3EACA20DC923700D37692 = {
@@ -362,7 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFF3EAD920DC923800D37692 /* ViewController.swift in Sources */,
-				AF1634D020DCBF9800D623E4 /* APIConstants.swift in Sources */,
+				AF01833020DCCFC4001634B4 /* APIConstants.swift in Sources */,
 				AF1634CC20DCBCA700D623E4 /* PhotosViewController.swift in Sources */,
 				AFF3EAD720DC923800D37692 /* AppDelegate.swift in Sources */,
 				AFF3EADF20DC923800D37692 /* FlickrSearchExample.xcdatamodeld in Sources */,
