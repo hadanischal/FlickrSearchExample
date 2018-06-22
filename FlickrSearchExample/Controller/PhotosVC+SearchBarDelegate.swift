@@ -9,20 +9,19 @@
 import Foundation
 import UIKit
 
-
 // MARK: - UISearchBarDelegate Setup
 extension PhotosViewController : UISearchBarDelegate {
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchActive = true;
+        searchActive = true
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        searchActive = false;
+        searchActive = false
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchActive = false;
+        searchActive = false
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
@@ -32,14 +31,24 @@ extension PhotosViewController : UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchActive = true;
+        searchActive = true
     }
     
     func searchBarSearchBegin(_ searchBar: UISearchBar) {
         if !searchBar.text!.isEmpty {
-            searchActive = false;
+            let searchText:String =  searchBar.text!.replacingOccurrences(of: " ", with: "")
+            DispatchQueue.main.async {
+                UIApplication.shared.isNetworkActivityIndicatorVisible = true
+                self.activityIndicator.start()
+                self.viewModel.fetchServiceCall(searchText){ result in
+                    self.activityIndicator.stop()
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                    self.searchActive = false
+                    self.collectionView.reloadData()
+                }
+            }
         }else{
+            searchActive = false;
         }
     }
 }
-

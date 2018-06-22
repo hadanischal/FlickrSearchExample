@@ -21,13 +21,13 @@ class  PhotosViewModel {
         self.service = service
     }
     
-    func fetchServiceCall(_ completion: ((Result<Bool, ErrorResult>) -> Void)? = nil) {
+    func fetchServiceCall(_ searchTerm: String, completion: ((Result<Bool, ErrorResult>) -> Void)? = nil) {
         
         guard let service = service else {
             onErrorHandling?(ErrorResult.custom(string: "Missing service"))
             return
         }
-        service.fetchPhotos { result in
+        service.fetchPhotos(searchTerm) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let converter) :
