@@ -16,7 +16,7 @@ struct APIConstants {
 //
     
     static let flickrMethod =  "flickr.photos.search"
-    static let apiKeyValue  =  "739b660ea3629666d04b83ad0a19a381"
+    static let apiKeyValue  =  "63f750f7c42662239caa7482194185b4"
     static let limit        =  20
     
     static let methodKey =         "method"
