@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF1634CC20DCBCA700D623E4 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1634CB20DCBCA700D623E4 /* PhotosViewController.swift */; };
 		AFF3EAD720DC923800D37692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3EAD620DC923800D37692 /* AppDelegate.swift */; };
 		AFF3EAD920DC923800D37692 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3EAD820DC923800D37692 /* ViewController.swift */; };
 		AFF3EADC20DC923800D37692 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFF3EADA20DC923800D37692 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF1634CB20DCBCA700D623E4 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		AFF3EAD320DC923700D37692 /* FlickrSearchExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrSearchExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF3EAD620DC923800D37692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFF3EAD820DC923800D37692 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,85 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF1634C020DCBB4F00D623E4 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				AFF3EAD620DC923800D37692 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		AF1634C120DCBBC300D623E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AF1634C220DCBBC300D623E4 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		AF1634C320DCBBC300D623E4 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		AF1634C420DCBBC300D623E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AF1634C520DCBBC300D623E4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AF1634C620DCBBC300D623E4 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		AF1634C720DCBBC300D623E4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AF1634CB20DCBCA700D623E4 /* PhotosViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AF1634C820DCBBC300D623E4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		AF1634C920DCBBC300D623E4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		AF1634CA20DCBBC300D623E4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		AFF3EACA20DC923700D37692 = {
 			isa = PBXGroup;
 			children = (
@@ -99,7 +180,17 @@
 		AFF3EAD520DC923700D37692 /* FlickrSearchExample */ = {
 			isa = PBXGroup;
 			children = (
-				AFF3EAD620DC923800D37692 /* AppDelegate.swift */,
+				AF1634C020DCBB4F00D623E4 /* AppDelegate */,
+				AF1634C120DCBBC300D623E4 /* Model */,
+				AF1634C420DCBBC300D623E4 /* View */,
+				AF1634C720DCBBC300D623E4 /* Controller */,
+				AF1634C520DCBBC300D623E4 /* ViewModels */,
+				AF1634C620DCBBC300D623E4 /* Storyboard */,
+				AF1634C920DCBBC300D623E4 /* Service */,
+				AF1634C320DCBBC300D623E4 /* Router */,
+				AF1634CA20DCBBC300D623E4 /* Utils */,
+				AF1634C220DCBBC300D623E4 /* Helper */,
+				AF1634C820DCBBC300D623E4 /* Extension */,
 				AFF3EAD820DC923800D37692 /* ViewController.swift */,
 				AFF3EADA20DC923800D37692 /* Main.storyboard */,
 				AFF3EAE020DC923A00D37692 /* Assets.xcassets */,
@@ -260,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFF3EAD920DC923800D37692 /* ViewController.swift in Sources */,
+				AF1634CC20DCBCA700D623E4 /* PhotosViewController.swift in Sources */,
 				AFF3EAD720DC923800D37692 /* AppDelegate.swift in Sources */,
 				AFF3EADF20DC923800D37692 /* FlickrSearchExample.xcdatamodeld in Sources */,
 			);
