@@ -14,6 +14,9 @@
 		AF01833820DCD0B1001634B4 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01833720DCD0B1001634B4 /* Result.swift */; };
 		AF01833A20DCD0BF001634B4 /* ErrorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01833920DCD0BF001634B4 /* ErrorResult.swift */; };
 		AF01833C20DCD109001634B4 /* Parceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01833B20DCD109001634B4 /* Parceable.swift */; };
+		AF01833E20DCD14F001634B4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01833D20DCD14F001634B4 /* NetworkService.swift */; };
+		AF01834020DCD15E001634B4 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01833F20DCD15E001634B4 /* NetworkHandler.swift */; };
+		AF01834220DCD172001634B4 /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01834120DCD172001634B4 /* NetworkMethod.swift */; };
 		AF1634CC20DCBCA700D623E4 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1634CB20DCBCA700D623E4 /* PhotosViewController.swift */; };
 		AFF3EAD720DC923800D37692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3EAD620DC923800D37692 /* AppDelegate.swift */; };
 		AFF3EAD920DC923800D37692 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3EAD820DC923800D37692 /* ViewController.swift */; };
@@ -50,6 +53,9 @@
 		AF01833720DCD0B1001634B4 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		AF01833920DCD0BF001634B4 /* ErrorResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResult.swift; sourceTree = "<group>"; };
 		AF01833B20DCD109001634B4 /* Parceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parceable.swift; sourceTree = "<group>"; };
+		AF01833D20DCD14F001634B4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		AF01833F20DCD15E001634B4 /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
+		AF01834120DCD172001634B4 /* NetworkMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
 		AF1634CB20DCBCA700D623E4 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		AFF3EAD320DC923700D37692 /* FlickrSearchExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrSearchExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF3EAD620DC923800D37692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -216,6 +222,9 @@
 		AF1634D520DCCF2000D623E4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				AF01834120DCD172001634B4 /* NetworkMethod.swift */,
+				AF01833D20DCD14F001634B4 /* NetworkService.swift */,
+				AF01833F20DCD15E001634B4 /* NetworkHandler.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -412,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF01833820DCD0B1001634B4 /* Result.swift in Sources */,
+				AF01834220DCD172001634B4 /* NetworkMethod.swift in Sources */,
 				AF01833A20DCD0BF001634B4 /* ErrorResult.swift in Sources */,
 				AF01833C20DCD109001634B4 /* Parceable.swift in Sources */,
 				AFF3EAD920DC923800D37692 /* ViewController.swift in Sources */,
@@ -419,8 +429,10 @@
 				AF01833220DCD020001634B4 /* DynamicValue.swift in Sources */,
 				AF01833020DCCFC4001634B4 /* APIConstants.swift in Sources */,
 				AF1634CC20DCBCA700D623E4 /* PhotosViewController.swift in Sources */,
+				AF01834020DCD15E001634B4 /* NetworkHandler.swift in Sources */,
 				AFF3EAD720DC923800D37692 /* AppDelegate.swift in Sources */,
 				AF01833620DCD07B001634B4 /* Reachability.swift in Sources */,
+				AF01833E20DCD14F001634B4 /* NetworkService.swift in Sources */,
 				AFF3EADF20DC923800D37692 /* FlickrSearchExample.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
