@@ -10,15 +10,17 @@ import UIKit
 
 class PhotosViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet weak var searchBar: UISearchBar!
     fileprivate let sectionInsets = UIEdgeInsets(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0)
     fileprivate let itemsPerRow: CGFloat = 2
     fileprivate var activityIndicator : ActivityIndicator! = ActivityIndicator()
-
+    var searchActive : Bool = false
     let dataSource = PhotosViewDataSource()
     lazy var viewModel : PhotosViewModel = {
         let viewModel = PhotosViewModel(dataSource: dataSource)
         return viewModel
     }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()

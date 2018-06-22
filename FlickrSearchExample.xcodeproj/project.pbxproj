@@ -29,6 +29,7 @@
 		AF01835820DCFA25001634B4 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01835720DCFA25001634B4 /* UIColor.swift */; };
 		AF01835A20DCFEEF001634B4 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01835920DCFEEF001634B4 /* UIViewController.swift */; };
 		AF01835C20DCFFA9001634B4 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01835B20DCFFA9001634B4 /* ActivityIndicator.swift */; };
+		AF01835E20DD0901001634B4 /* PhotosVC+SearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01835D20DD0901001634B4 /* PhotosVC+SearchBarDelegate.swift */; };
 		AF1634CC20DCBCA700D623E4 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1634CB20DCBCA700D623E4 /* PhotosViewController.swift */; };
 		AFF3EAD720DC923800D37692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3EAD620DC923800D37692 /* AppDelegate.swift */; };
 		AFF3EAD920DC923800D37692 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3EAD820DC923800D37692 /* ViewController.swift */; };
@@ -80,6 +81,7 @@
 		AF01835720DCFA25001634B4 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		AF01835920DCFEEF001634B4 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		AF01835B20DCFFA9001634B4 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		AF01835D20DD0901001634B4 /* PhotosVC+SearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotosVC+SearchBarDelegate.swift"; sourceTree = "<group>"; };
 		AF1634CB20DCBCA700D623E4 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		AFF3EAD320DC923700D37692 /* FlickrSearchExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrSearchExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF3EAD620DC923800D37692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				AF1634CB20DCBCA700D623E4 /* PhotosViewController.swift */,
+				AF01835D20DD0901001634B4 /* PhotosVC+SearchBarDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF01835E20DD0901001634B4 /* PhotosVC+SearchBarDelegate.swift in Sources */,
 				AF01833820DCD0B1001634B4 /* Result.swift in Sources */,
 				AF01834220DCD172001634B4 /* NetworkMethod.swift in Sources */,
 				AF01834B20DCE5F4001634B4 /* SearchResultsModel.swift in Sources */,
