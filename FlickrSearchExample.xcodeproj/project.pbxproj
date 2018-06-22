@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF01833020DCCFC4001634B4 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01832F20DCCFC4001634B4 /* APIConstants.swift */; };
+		AF01833220DCD020001634B4 /* DynamicValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01833120DCD020001634B4 /* DynamicValue.swift */; };
+		AF01833420DCD063001634B4 /* ReachabilityError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01833320DCD063001634B4 /* ReachabilityError.swift */; };
+		AF01833620DCD07B001634B4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01833520DCD07B001634B4 /* Reachability.swift */; };
+		AF01833820DCD0B1001634B4 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01833720DCD0B1001634B4 /* Result.swift */; };
+		AF01833A20DCD0BF001634B4 /* ErrorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01833920DCD0BF001634B4 /* ErrorResult.swift */; };
+		AF01833C20DCD109001634B4 /* Parceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01833B20DCD109001634B4 /* Parceable.swift */; };
+		AF01833E20DCD14F001634B4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01833D20DCD14F001634B4 /* NetworkService.swift */; };
+		AF01834020DCD15E001634B4 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01833F20DCD15E001634B4 /* NetworkHandler.swift */; };
+		AF01834220DCD172001634B4 /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01834120DCD172001634B4 /* NetworkMethod.swift */; };
+		AF01834420DCD274001634B4 /* PhotosServiceCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01834320DCD274001634B4 /* PhotosServiceCall.swift */; };
+		AF01834620DCD2C1001634B4 /* PhotosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01834520DCD2C1001634B4 /* PhotosModel.swift */; };
+		AF01834820DCDC4F001634B4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AF01834720DCDC4F001634B4 /* .gitignore */; };
+		AF01834B20DCE5F4001634B4 /* SearchResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01834A20DCE5F4001634B4 /* SearchResultsModel.swift */; };
+		AF01834D20DCE67B001634B4 /* JSONCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01834C20DCE67B001634B4 /* JSONCompatible.swift */; };
+		AF1634CC20DCBCA700D623E4 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1634CB20DCBCA700D623E4 /* PhotosViewController.swift */; };
 		AFF3EAD720DC923800D37692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3EAD620DC923800D37692 /* AppDelegate.swift */; };
 		AFF3EAD920DC923800D37692 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3EAD820DC923800D37692 /* ViewController.swift */; };
 		AFF3EADC20DC923800D37692 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFF3EADA20DC923800D37692 /* Main.storyboard */; };
@@ -35,6 +51,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF01832F20DCCFC4001634B4 /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		AF01833120DCD020001634B4 /* DynamicValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicValue.swift; sourceTree = "<group>"; };
+		AF01833320DCD063001634B4 /* ReachabilityError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityError.swift; sourceTree = "<group>"; };
+		AF01833520DCD07B001634B4 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		AF01833720DCD0B1001634B4 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		AF01833920DCD0BF001634B4 /* ErrorResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResult.swift; sourceTree = "<group>"; };
+		AF01833B20DCD109001634B4 /* Parceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parceable.swift; sourceTree = "<group>"; };
+		AF01833D20DCD14F001634B4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		AF01833F20DCD15E001634B4 /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
+		AF01834120DCD172001634B4 /* NetworkMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
+		AF01834320DCD274001634B4 /* PhotosServiceCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosServiceCall.swift; sourceTree = "<group>"; };
+		AF01834520DCD2C1001634B4 /* PhotosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosModel.swift; sourceTree = "<group>"; };
+		AF01834720DCDC4F001634B4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		AF01834A20DCE5F4001634B4 /* SearchResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsModel.swift; sourceTree = "<group>"; };
+		AF01834C20DCE67B001634B4 /* JSONCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCompatible.swift; sourceTree = "<group>"; };
+		AF1634CB20DCBCA700D623E4 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		AFF3EAD320DC923700D37692 /* FlickrSearchExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrSearchExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF3EAD620DC923800D37692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFF3EAD820DC923800D37692 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,9 +108,145 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF01832E20DCCFC4001634B4 /* APIConstants */ = {
+			isa = PBXGroup;
+			children = (
+				AF01832F20DCCFC4001634B4 /* APIConstants.swift */,
+			);
+			path = APIConstants;
+			sourceTree = "<group>";
+		};
+		AF1634C020DCBB4F00D623E4 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				AFF3EAD620DC923800D37692 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		AF1634C120DCBBC300D623E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF01834C20DCE67B001634B4 /* JSONCompatible.swift */,
+				AF01834A20DCE5F4001634B4 /* SearchResultsModel.swift */,
+				AF01834520DCD2C1001634B4 /* PhotosModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AF1634C220DCBBC300D623E4 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				AF01833120DCD020001634B4 /* DynamicValue.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		AF1634C320DCBBC300D623E4 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				AF01834320DCD274001634B4 /* PhotosServiceCall.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		AF1634C420DCBBC300D623E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AF1634C520DCBBC300D623E4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AF1634C620DCBBC300D623E4 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				AFF3EADA20DC923800D37692 /* Main.storyboard */,
+				AFF3EAE220DC923A00D37692 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		AF1634C720DCBBC300D623E4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AF1634CB20DCBCA700D623E4 /* PhotosViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AF1634C820DCBBC300D623E4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		AF1634C920DCBBC300D623E4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AF01832E20DCCFC4001634B4 /* APIConstants */,
+				AF1634D220DCCF2000D623E4 /* Reachability */,
+				AF1634D320DCCF2000D623E4 /* Result */,
+				AF1634D520DCCF2000D623E4 /* Network */,
+				AF1634D420DCCF2000D623E4 /* Parser */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		AF1634CA20DCBBC300D623E4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		AF1634D220DCCF2000D623E4 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				AF01833320DCD063001634B4 /* ReachabilityError.swift */,
+				AF01833520DCD07B001634B4 /* Reachability.swift */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		AF1634D320DCCF2000D623E4 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				AF01833720DCD0B1001634B4 /* Result.swift */,
+				AF01833920DCD0BF001634B4 /* ErrorResult.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		AF1634D420DCCF2000D623E4 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				AF01833B20DCD109001634B4 /* Parceable.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		AF1634D520DCCF2000D623E4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AF01834120DCD172001634B4 /* NetworkMethod.swift */,
+				AF01833D20DCD14F001634B4 /* NetworkService.swift */,
+				AF01833F20DCD15E001634B4 /* NetworkHandler.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		AFF3EACA20DC923700D37692 = {
 			isa = PBXGroup;
 			children = (
+				AF01834720DCDC4F001634B4 /* .gitignore */,
 				AFF3EAD520DC923700D37692 /* FlickrSearchExample */,
 				AFF3EAED20DC923A00D37692 /* FlickrSearchExampleTests */,
 				AFF3EAF820DC923A00D37692 /* FlickrSearchExampleUITests */,
@@ -99,11 +267,19 @@
 		AFF3EAD520DC923700D37692 /* FlickrSearchExample */ = {
 			isa = PBXGroup;
 			children = (
-				AFF3EAD620DC923800D37692 /* AppDelegate.swift */,
+				AF1634C020DCBB4F00D623E4 /* AppDelegate */,
+				AF1634C120DCBBC300D623E4 /* Model */,
+				AF1634C420DCBBC300D623E4 /* View */,
+				AF1634C720DCBBC300D623E4 /* Controller */,
+				AF1634C520DCBBC300D623E4 /* ViewModels */,
+				AF1634C620DCBBC300D623E4 /* Storyboard */,
+				AF1634C920DCBBC300D623E4 /* Service */,
+				AF1634C320DCBBC300D623E4 /* Router */,
+				AF1634CA20DCBBC300D623E4 /* Utils */,
+				AF1634C220DCBBC300D623E4 /* Helper */,
+				AF1634C820DCBBC300D623E4 /* Extension */,
 				AFF3EAD820DC923800D37692 /* ViewController.swift */,
-				AFF3EADA20DC923800D37692 /* Main.storyboard */,
 				AFF3EAE020DC923A00D37692 /* Assets.xcassets */,
-				AFF3EAE220DC923A00D37692 /* LaunchScreen.storyboard */,
 				AFF3EAE520DC923A00D37692 /* Info.plist */,
 				AFF3EADD20DC923800D37692 /* FlickrSearchExample.xcdatamodeld */,
 			);
@@ -232,6 +408,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF01834820DCDC4F001634B4 /* .gitignore in Resources */,
 				AFF3EAE420DC923A00D37692 /* LaunchScreen.storyboard in Resources */,
 				AFF3EAE120DC923A00D37692 /* Assets.xcassets in Resources */,
 				AFF3EADC20DC923800D37692 /* Main.storyboard in Resources */,
@@ -259,8 +436,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF01833820DCD0B1001634B4 /* Result.swift in Sources */,
+				AF01834220DCD172001634B4 /* NetworkMethod.swift in Sources */,
+				AF01834B20DCE5F4001634B4 /* SearchResultsModel.swift in Sources */,
+				AF01833A20DCD0BF001634B4 /* ErrorResult.swift in Sources */,
+				AF01833C20DCD109001634B4 /* Parceable.swift in Sources */,
 				AFF3EAD920DC923800D37692 /* ViewController.swift in Sources */,
+				AF01833420DCD063001634B4 /* ReachabilityError.swift in Sources */,
+				AF01833220DCD020001634B4 /* DynamicValue.swift in Sources */,
+				AF01833020DCCFC4001634B4 /* APIConstants.swift in Sources */,
+				AF1634CC20DCBCA700D623E4 /* PhotosViewController.swift in Sources */,
+				AF01834020DCD15E001634B4 /* NetworkHandler.swift in Sources */,
+				AF01834620DCD2C1001634B4 /* PhotosModel.swift in Sources */,
 				AFF3EAD720DC923800D37692 /* AppDelegate.swift in Sources */,
+				AF01834420DCD274001634B4 /* PhotosServiceCall.swift in Sources */,
+				AF01833620DCD07B001634B4 /* Reachability.swift in Sources */,
+				AF01834D20DCE67B001634B4 /* JSONCompatible.swift in Sources */,
+				AF01833E20DCD14F001634B4 /* NetworkService.swift in Sources */,
 				AFF3EADF20DC923800D37692 /* FlickrSearchExample.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
