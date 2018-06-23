@@ -26,7 +26,9 @@ class DetailsViewDataSource: DetailsDataSource<PhotosModel>,UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"DetailViewCell", for: indexPath) as! DetailViewCell
-        cell.photosValue = data.value as? PhotosModel
+        
+//        print(value)
+//        cell.photosValue = value
         return cell
     }
 }

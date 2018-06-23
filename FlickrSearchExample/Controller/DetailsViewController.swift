@@ -15,6 +15,7 @@ class DetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(viewModel?.dataSource)
         self.tableView.dataSource = dataSource
         self.setupUI()
     }
