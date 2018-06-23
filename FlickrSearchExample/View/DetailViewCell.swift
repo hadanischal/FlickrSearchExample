@@ -1,25 +1,24 @@
 //
-//  PhotoViewCell.swift
+//  DetailViewCell.swift
 //  FlickrSearchExample
 //
-//  Created by Nischal Hada on 6/22/18.
+//  Created by Nischal Hada on 6/23/18.
 //  Copyright © 2018 NischalHada. All rights reserved.
 //
 
 import UIKit
 
-class PhotoViewCell: UICollectionViewCell {
-    @IBOutlet weak var bagroundView: UIView!
+class DetailViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel?
     @IBOutlet var photoImageView: UIImageView?
     
-    var photosValue : PhotosModel? {
+    var dataValue : DetailModel? {
         didSet {
-            guard let feeds = photosValue else {
+            guard let data = dataValue else {
                 return
             }
-            titleLabel?.text = feeds.title
-            ImageManager.sharedInstance.downloadImageFromURL(feeds.flickrImageURL()) { (success, image) -> Void in
+            titleLabel?.text = data.title
+            ImageManager.sharedInstance.downloadImageFromURL(data.description!) { (success, image) -> Void in
                 if success && image != nil {
                     self.photoImageView?.image = image
                 }
@@ -29,7 +28,6 @@ class PhotoViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.bagroundView.backgroundColor = ThemeColor.white
         self.photoImageView?.contentMode =   UIViewContentMode.scaleAspectFit
     }
 }

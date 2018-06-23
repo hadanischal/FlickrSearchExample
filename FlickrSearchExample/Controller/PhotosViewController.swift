@@ -12,14 +12,14 @@ class PhotosViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
     fileprivate let sectionInsets = UIEdgeInsets(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0)
-    fileprivate let itemsPerRow: CGFloat = 2
+    fileprivate let itemsPerRow: CGFloat = 3
     var activityIndicator : ActivityIndicator! = ActivityIndicator()
     var searchActive : Bool = false
     let dataSource = PhotosViewDataSource()
     lazy var viewModel : PhotosViewModel = {
         let viewModel = PhotosViewModel(dataSource: dataSource)
         return viewModel
-    }()
+    }()    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class PhotosViewController: UIViewController {
         self.title = "Flickr Search"
         self.view.backgroundColor = ThemeColor.white
     }
-
+    
     func setupViewModel() {
         self.collectionView.dataSource = self.dataSource
         self.dataSource.data.addAndNotify(observer: self) { [weak self] _ in
@@ -39,6 +39,12 @@ class PhotosViewController: UIViewController {
         }
         self.viewModel.onErrorHandling = { [weak self] error in
             self?.showAlert(title: "An error occured", message: "Oops, something went wrong!")
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsViewController" {
+            let controller = segue.destination as! DetailsViewController
+            controller.selectedData = viewModel.selectedData
         }
     }
 }
@@ -51,12 +57,15 @@ extension PhotosViewController : UICollectionViewDelegateFlowLayout {
         self.collectionView.collectionViewLayout = layout
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
-        self.collectionView.backgroundColor = ThemeColor.tableViewBackgroundColor
+        self.collectionView.backgroundColor = ThemeColor.white
         self.collectionView.showsHorizontalScrollIndicator = false
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("didSelectItem")
+        self.viewModel.presentProfile(indexPath) { (Result) in
+            self.performSegue(withIdentifier: "toDetailsViewController", sender: self)
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
