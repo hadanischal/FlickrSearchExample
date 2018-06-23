@@ -29,7 +29,7 @@ class PhotoViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.bagroundView.backgroundColor = ThemeColor.contentViewBackgroundColor
+        self.bagroundView.backgroundColor = ThemeColor.white
         self.photoImageView?.contentMode =   UIViewContentMode.scaleAspectFit
     }
 }

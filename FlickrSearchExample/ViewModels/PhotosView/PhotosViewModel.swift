@@ -15,7 +15,8 @@ class  PhotosViewModel {
     // MARK: - Output
     weak var service: PhotosServiceCallProtocol?
     var onErrorHandling : ((ErrorResult?) -> Void)?
-
+    //var onpresentProfile : ((DetailsViewModel?) -> Void)?
+    
     init(service: PhotosServiceCallProtocol? = PhotosServiceCall.shared, dataSource : GenericDataSource<PhotosModel>?) {
         self.dataSource = dataSource
         self.service = service
@@ -42,5 +43,15 @@ class  PhotosViewModel {
                 }
             }
         }
+    }
+    
+    func presentProfile(_ indexPath: IndexPath, completion: ((DetailsViewModel) -> Void)? = nil)  {
+        let dataValue = self.dataSource?.data.value[indexPath.row]
+        print(dataValue ?? "data selected nil")
+        let viewModel : DetailsViewModel = {
+            let viewModel = DetailsViewModel(dataSource: dataValue)
+            return viewModel
+        }()
+        completion!(viewModel)
     }
 }

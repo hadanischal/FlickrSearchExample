@@ -131,17 +131,17 @@
                     <connections>
                         <outlet property="collectionView" destination="dlV-oB-Rcb" id="G3S-c5-mQu"/>
                         <outlet property="searchBar" destination="soW-RJ-SEq" id="juT-AU-98g"/>
-                        <segue destination="ScC-bA-7cp" kind="show" id="bBE-yR-5Gl"/>
+                        <segue destination="ScC-bA-7cp" kind="show" identifier="toDetailsViewController" id="bBE-yR-5Gl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1150" y="773"/>
         </scene>
-        <!--View Controller-->
+        <!--Details View Controller-->
         <scene sceneID="Uc3-ze-i2O">
             <objects>
-                <viewController id="ScC-bA-7cp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsViewController" id="ScC-bA-7cp" customClass="DetailsViewController" customModule="FlickrSearchExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gmu-cx-Kcm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
