@@ -10,27 +10,38 @@ import UIKit
 
 class PhotosViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet weak var searchBar: UISearchBar!
     fileprivate let sectionInsets = UIEdgeInsets(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0)
     fileprivate let itemsPerRow: CGFloat = 2
-    
+    var activityIndicator : ActivityIndicator! = ActivityIndicator()
+    var searchActive : Bool = false
     let dataSource = PhotosViewDataSource()
+    lazy var viewModel : PhotosViewModel = {
+        let viewModel = PhotosViewModel(dataSource: dataSource)
+        return viewModel
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
-
-        
+        self.setupViewModel()
     }
-    
     
     func setupUI() {
         self.title = "Flickr Search"
         self.view.backgroundColor = ThemeColor.white
     }
 
+    func setupViewModel() {
+        self.collectionView.dataSource = self.dataSource
+        self.dataSource.data.addAndNotify(observer: self) { [weak self] _ in
+            self?.collectionView.reloadData()
+        }
+        self.viewModel.onErrorHandling = { [weak self] error in
+            self?.showAlert(title: "An error occured", message: "Oops, something went wrong!")
+        }
+    }
 }
-
-
 
 // MARK: UICollectionViewDelegateFlowLayout
 extension PhotosViewController : UICollectionViewDelegateFlowLayout {

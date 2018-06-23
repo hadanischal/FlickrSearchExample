@@ -9,21 +9,25 @@
 import Foundation
 
 class  PhotosViewModel {
+    // MARK: - Input
     weak var dataSource : GenericDataSource<PhotosModel>?
-    weak var service: PhotosServiceCallProtocol?
     
-    init(service: PhotosServiceCallProtocol, dataSource : GenericDataSource<PhotosModel>?) {
+    // MARK: - Output
+    weak var service: PhotosServiceCallProtocol?
+    var onErrorHandling : ((ErrorResult?) -> Void)?
+
+    init(service: PhotosServiceCallProtocol? = PhotosServiceCall.shared, dataSource : GenericDataSource<PhotosModel>?) {
         self.dataSource = dataSource
         self.service = service
     }
     
-    func fetchServiceCall(_ completion: ((Result<Bool, ErrorResult>) -> Void)? = nil) {
+    func fetchServiceCall(_ searchTerm: String, completion: ((Result<Bool, ErrorResult>) -> Void)? = nil) {
         
         guard let service = service else {
-            completion?(Result.failure(ErrorResult.custom(string: "Missing service")))
+            onErrorHandling?(ErrorResult.custom(string: "Missing service"))
             return
         }
-        service.fetchPhotos { result in
+        service.fetchPhotos(searchTerm) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let converter) :
@@ -32,6 +36,7 @@ class  PhotosViewModel {
                     break
                 case .failure(let error) :
                     print("Parser error \(error)")
+                    self.onErrorHandling?(error)
                     completion?(Result.failure(error))
                     break
                 }
