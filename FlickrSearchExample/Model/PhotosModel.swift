@@ -68,6 +68,13 @@ struct PhotosModel: JSONCompatible {
         dict["isfamily"] = isfamily
         return dict
     }
+    
+    func flickrImageURL(_ size:String = "m") -> URL?{
+        if let url =  URL(string: "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret)_\(size).jpg") {
+            return url
+        }
+        return nil
+    }
 }
 
 
