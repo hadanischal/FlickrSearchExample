@@ -13,6 +13,8 @@ protocol ImageManaging: class {
 }
 
 class ImageManager: NSObject {
+    static let sharedInstance = ImageManager()
+    
     var imageCache = [String: UIImage]()
     private let kLazyLoadMaxCacheImageSize = 20
     func cacheImage(_ image: UIImage, forURL url: String) {

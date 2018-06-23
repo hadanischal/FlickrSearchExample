@@ -32,6 +32,7 @@
 		AF01835E20DD0901001634B4 /* PhotosVC+SearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01835D20DD0901001634B4 /* PhotosVC+SearchBarDelegate.swift */; };
 		AF1634CC20DCBCA700D623E4 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1634CB20DCBCA700D623E4 /* PhotosViewController.swift */; };
 		AF1B2D6220DDC7B300BB0259 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1B2D6120DDC7B300BB0259 /* ImageManager.swift */; };
+		AF1B2D6420DDCAC600BB0259 /* ImageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1B2D6320DDCAC600BB0259 /* ImageUtility.swift */; };
 		AFF3EAD720DC923800D37692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3EAD620DC923800D37692 /* AppDelegate.swift */; };
 		AFF3EAD920DC923800D37692 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3EAD820DC923800D37692 /* ViewController.swift */; };
 		AFF3EADC20DC923800D37692 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFF3EADA20DC923800D37692 /* Main.storyboard */; };
@@ -85,6 +86,7 @@
 		AF01835D20DD0901001634B4 /* PhotosVC+SearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotosVC+SearchBarDelegate.swift"; sourceTree = "<group>"; };
 		AF1634CB20DCBCA700D623E4 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		AF1B2D6120DDC7B300BB0259 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		AF1B2D6320DDCAC600BB0259 /* ImageUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtility.swift; sourceTree = "<group>"; };
 		AFF3EAD320DC923700D37692 /* FlickrSearchExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrSearchExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF3EAD620DC923800D37692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFF3EAD820DC923800D37692 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 		AF1634CA20DCBBC300D623E4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AF1B2D6320DDCAC600BB0259 /* ImageUtility.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF1B2D6420DDCAC600BB0259 /* ImageUtility.swift in Sources */,
 				AF01835E20DD0901001634B4 /* PhotosVC+SearchBarDelegate.swift in Sources */,
 				AF01833820DCD0B1001634B4 /* Result.swift in Sources */,
 				AF01834220DCD172001634B4 /* NetworkMethod.swift in Sources */,

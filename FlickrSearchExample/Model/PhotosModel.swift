@@ -69,11 +69,9 @@ struct PhotosModel: JSONCompatible {
         return dict
     }
     
-    func flickrImageURL(_ size:String = "m") -> URL?{
-        if let url =  URL(string: "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret)_\(size).jpg") {
-            return url
-        }
-        return nil
+    func flickrImageURL(_ size:String = "m") -> String{
+        let url =  "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret)_\(size).jpg"
+        return url
     }
 }
 
