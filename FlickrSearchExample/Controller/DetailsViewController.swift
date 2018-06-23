@@ -10,48 +10,63 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    var activityIndicator : ActivityIndicator! = ActivityIndicator()
+    var selectedData: PhotosModel?
     let dataSource = DetailsViewDataSource()
-    var viewModel: DetailsViewModel?
-
+    lazy var viewModel : DetailsViewModel = {
+        let viewModel = DetailsViewModel(photoData: selectedData, dataSource: dataSource)
+        return viewModel
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(viewModel?.dataSource)
-        self.tableView.dataSource = dataSource
         self.setupUI()
+        self.setupViewModel()
+        self.setupTableView()
     }
     
     func setupUI() {
-        self.navigationItem.title = viewModel?.dataSource?.title
+        self.navigationItem.title = selectedData?.title
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.view.backgroundColor = ThemeColor.white
+    }
+    
+    func setupTableView() {
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         self.tableView.backgroundColor = ThemeColor.white
         self.view.backgroundColor = ThemeColor.white
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
-}
-
-
-// MARK: - UITableViewDataSource
-
-extension DetailsViewController {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("tapped")
+    
+    func setupViewModel() {
+        self.tableView.dataSource = self.dataSource
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        self.activityIndicator.start()
+        self.viewModel.fetchDataSource(photoData: self.selectedData){ result in
+            DispatchQueue.main.async {
+                self.activityIndicator.stop()
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                self.tableView.reloadData()
+            }
+        }
+        self.dataSource.data.addAndNotify(observer: self) { [weak self] _ in
+            self?.tableView.reloadData()
+        }
     }
 }
 
 // MARK: - TableViewDelegate Setup
 
 extension DetailsViewController : UITableViewDelegate{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return 100
+        //return UITableViewAutomaticDimension
     }
     
 }

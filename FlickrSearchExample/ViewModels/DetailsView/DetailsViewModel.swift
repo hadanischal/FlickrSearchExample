@@ -10,11 +10,14 @@ import Foundation
 
 class  DetailsViewModel {
     // MARK: - Input
-    var dataSource :PhotosModel?  //DetailsDataSource<PhotosModel>?
+    weak var dataSource : DetailsDataSource<DetailModel>?
     
-    init(dataSource :PhotosModel?){
-        //DetailsDataSource<PhotosModel>?) {
+    init(photoData :PhotosModel?, dataSource :DetailsDataSource<DetailModel>?){
         self.dataSource = dataSource
     }
     
+    func fetchDataSource(photoData :PhotosModel?, completion: ((Result<Bool, ErrorResult>) -> Void)? = nil) {
+        self.dataSource?.data.value = DetailModel.setupDetailModel()
+        completion?(Result.success(true))
+    }
 }

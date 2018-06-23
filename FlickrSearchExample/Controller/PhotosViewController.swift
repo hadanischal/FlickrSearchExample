@@ -19,9 +19,7 @@ class PhotosViewController: UIViewController {
     lazy var viewModel : PhotosViewModel = {
         let viewModel = PhotosViewModel(dataSource: dataSource)
         return viewModel
-    }()
-    private var detailViewModel: DetailsViewModel!
-
+    }()    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +31,7 @@ class PhotosViewController: UIViewController {
         self.title = "Flickr Search"
         self.view.backgroundColor = ThemeColor.white
     }
-
+    
     func setupViewModel() {
         self.collectionView.dataSource = self.dataSource
         self.dataSource.data.addAndNotify(observer: self) { [weak self] _ in
@@ -46,10 +44,9 @@ class PhotosViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailsViewController" {
             let controller = segue.destination as! DetailsViewController
-            controller.viewModel = detailViewModel
+            controller.selectedData = viewModel.selectedData
         }
     }
-
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
@@ -66,12 +63,11 @@ extension PhotosViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.viewModel.presentProfile(indexPath) { (Result) in
-            self.detailViewModel =  Result
             self.performSegue(withIdentifier: "toDetailsViewController", sender: self)
         }
         
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
         let availableWidth = view.frame.width - paddingSpace

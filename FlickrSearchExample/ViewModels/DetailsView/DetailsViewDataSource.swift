@@ -10,25 +10,21 @@ import Foundation
 import UIKit
 
 class DetailsDataSource<T>: NSObject {
-    var data: DynamicValue<Any> =  DynamicValue((Any).self)
- 
+    var data: DynamicValue<[T]> = DynamicValue([])
 }
 
-class DetailsViewDataSource: DetailsDataSource<PhotosModel>,UITableViewDataSource {
+class DetailsViewDataSource: DetailsDataSource<DetailModel>,UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return data.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier:"DetailViewCell", for: indexPath) as! DetailViewCell
-        
-//        print(value)
-//        cell.photosValue = value
+        let cell = tableView.dequeueReusableCell(withIdentifier:"DetailInformationCell", for: indexPath) as! DetailInformationCell
         return cell
     }
 }
