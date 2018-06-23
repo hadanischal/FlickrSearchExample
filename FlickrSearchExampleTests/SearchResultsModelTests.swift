@@ -1,5 +1,5 @@
 //
-//  PhotosViewModelTests.swift
+//  SearchResultsModelTests.swift
 //  FlickrSearchExampleTests
 //
 //  Created by Nischal Hada on 6/24/18.
@@ -7,22 +7,8 @@
 //
 
 import XCTest
-@testable import FlickrSearchExample
 
-class PhotosViewModelTests: XCTestCase {
-    fileprivate class MockPhotosServiceCall: PhotosServiceCallProtocol {
-        var searchData: SearchResultsModel?
-        func fetchPhotos(_ searchTerm: String, completion: @escaping ((Result<SearchResultsModel, ErrorResult>) -> Void)) {
-            if let data = searchData {
-                completion(Result.success(data))
-            } else {
-                completion(Result.failure(ErrorResult.custom(string: "No converter")))
-            }
-        }
-    }
-    
-    var viewModel : PhotosViewModel!
-    var dataSource : GenericDataSource<PhotosModel>!
+class SearchResultsModelTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
