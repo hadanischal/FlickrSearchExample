@@ -36,6 +36,8 @@
 		AF1B2D6620DDD02A00BB0259 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1B2D6520DDD02A00BB0259 /* DetailsViewController.swift */; };
 		AF1B2D6A20DDD32000BB0259 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1B2D6920DDD32000BB0259 /* DetailsViewModel.swift */; };
 		AF1B2D6C20DDD33300BB0259 /* DetailsViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1B2D6B20DDD33300BB0259 /* DetailsViewDataSource.swift */; };
+		AFC2043620DDEC8500FF5D3F /* DetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2043520DDEC8500FF5D3F /* DetailViewCell.swift */; };
+		AFC2043820DDF4F400FF5D3F /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2043720DDF4F400FF5D3F /* DetailModel.swift */; };
 		AFF3EAD720DC923800D37692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3EAD620DC923800D37692 /* AppDelegate.swift */; };
 		AFF3EAD920DC923800D37692 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3EAD820DC923800D37692 /* ViewController.swift */; };
 		AFF3EADC20DC923800D37692 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFF3EADA20DC923800D37692 /* Main.storyboard */; };
@@ -93,6 +95,8 @@
 		AF1B2D6520DDD02A00BB0259 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		AF1B2D6920DDD32000BB0259 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		AF1B2D6B20DDD33300BB0259 /* DetailsViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewDataSource.swift; sourceTree = "<group>"; };
+		AFC2043520DDEC8500FF5D3F /* DetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCell.swift; sourceTree = "<group>"; };
+		AFC2043720DDF4F400FF5D3F /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		AFF3EAD320DC923700D37692 /* FlickrSearchExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrSearchExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF3EAD620DC923800D37692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFF3EAD820DC923800D37692 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 				AF01834C20DCE67B001634B4 /* JSONCompatible.swift */,
 				AF01834A20DCE5F4001634B4 /* SearchResultsModel.swift */,
 				AF01834520DCD2C1001634B4 /* PhotosModel.swift */,
+				AFC2043720DDF4F400FF5D3F /* DetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				AF01835020DCF778001634B4 /* PhotoViewCell.swift */,
+				AFC2043520DDEC8500FF5D3F /* DetailViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -516,6 +522,7 @@
 				AF1B2D6620DDD02A00BB0259 /* DetailsViewController.swift in Sources */,
 				AF01833A20DCD0BF001634B4 /* ErrorResult.swift in Sources */,
 				AF01833C20DCD109001634B4 /* Parceable.swift in Sources */,
+				AFC2043820DDF4F400FF5D3F /* DetailModel.swift in Sources */,
 				AF01835420DCF7F1001634B4 /* ThemeColor.swift in Sources */,
 				AFF3EAD920DC923800D37692 /* ViewController.swift in Sources */,
 				AF01833420DCD063001634B4 /* ReachabilityError.swift in Sources */,
@@ -536,6 +543,7 @@
 				AF01834D20DCE67B001634B4 /* JSONCompatible.swift in Sources */,
 				AF01834F20DCF696001634B4 /* PhotosViewModel.swift in Sources */,
 				AF01833E20DCD14F001634B4 /* NetworkService.swift in Sources */,
+				AFC2043620DDEC8500FF5D3F /* DetailViewCell.swift in Sources */,
 				AFF3EADF20DC923800D37692 /* FlickrSearchExample.xcdatamodeld in Sources */,
 				AF01835120DCF778001634B4 /* PhotoViewCell.swift in Sources */,
 			);
