@@ -23,10 +23,13 @@ class PhotosViewModelTests: XCTestCase {
     
     var viewModel : PhotosViewModel!
     var dataSource : GenericDataSource<PhotosModel>!
-    
+    fileprivate var service : MockPhotosServiceCall!
+
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        self.service = MockPhotosServiceCall()
+        self.dataSource = GenericDataSource<PhotosModel>()
+        self.viewModel = PhotosViewModel(service: service, dataSource: dataSource)
     }
     
     override func tearDown() {
