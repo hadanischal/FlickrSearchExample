@@ -10,10 +10,6 @@ import Foundation
 
 final class NetworkService {
     func loadData(urlString: String, parameters: [String : String], session: URLSession = URLSession(configuration: .default), completion: @escaping (Result<Data, ErrorResult>) -> Void) -> URLSessionTask? {
-//        guard let url = URL(string: urlString) else {
-//            completion(.failure(.network(string: "Wrong url format")))
-//            return nil
-//        }
         var components = URLComponents(string: urlString)!
         components.queryItems = parameters.map { (key, value) in
             URLQueryItem(name: key, value: value)
