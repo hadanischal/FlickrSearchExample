@@ -24,9 +24,7 @@ class PhotosViewDataSource: GenericDataSource<PhotosModel>, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoViewCell", for: indexPath) as! PhotoViewCell
-        let dataValue = self.data.value[indexPath.row]
-        cell.photosValue = dataValue
-       // ImageUtility().updateImageForCollectionViewCell(cell, inCollectionView: collectionView, imageURL: dataValue.flickrImageURL(), atIndexPath: indexPath)
+        cell.photosValue = self.data.value[indexPath.row]
         return cell
     }
 }
