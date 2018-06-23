@@ -33,20 +33,31 @@ class PhotosViewModelTests: XCTestCase {
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        self.viewModel = nil
+        self.dataSource = nil
+        self.service = nil
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testfetchPhotos() {
+        service.searchData = SearchResultsModel(page: 1, pages: 1, perpage: 1, total: "1", photoResults: [])
+        viewModel.fetchServiceCall("Initial Test") { (result) in
+            switch result {
+            case .failure(_) :
+                XCTAssert(false, "ViewModel should not be able to fetch without service")
+            default: break
+            }
         }
     }
     
+    func testfetchNoPhotoss() {
+        service.searchData = nil
+        viewModel.fetchServiceCall("Initial Test") { (result) in
+            switch result {
+            case .success(_) :
+                XCTAssert(false, "ViewModel should not be able to fetch")
+            default: break
+            }
+        }
+    }
 }
