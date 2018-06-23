@@ -14,11 +14,11 @@ class DetailViewCell: UITableViewCell {
     
     var photosValue : PhotosModel? {
         didSet {
-            guard let feeds = photosValue else {
+            guard let data = photosValue else {
                 return
             }
-            titleLabel?.text = feeds.title
-            ImageManager.sharedInstance.downloadImageFromURL(feeds.flickrImageURL()) { (success, image) -> Void in
+            titleLabel?.text = data.title
+            ImageManager.sharedInstance.downloadImageFromURL(data.flickrImageURL()) { (success, image) -> Void in
                 if success && image != nil {
                     self.photoImageView?.image = image
                 }
