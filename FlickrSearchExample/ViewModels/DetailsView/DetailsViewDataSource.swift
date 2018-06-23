@@ -25,6 +25,7 @@ class DetailsViewDataSource: DetailsDataSource<DetailModel>,UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"DetailInformationCell", for: indexPath) as! DetailInformationCell
+        cell.dataValue = data.value[indexPath.row]
         return cell
     }
 }

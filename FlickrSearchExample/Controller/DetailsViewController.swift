@@ -33,9 +33,8 @@ class DetailsViewController: UIViewController {
     }
     
     func setupTableView() {
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
-        self.tableView.backgroundColor = ThemeColor.white
-        self.view.backgroundColor = ThemeColor.white
+        self.tableView.backgroundColor = ThemeColor.tableViewBackgroundColor
+        self.view.backgroundColor = ThemeColor.tableViewBackgroundColor
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
     
@@ -57,18 +56,15 @@ class DetailsViewController: UIViewController {
 }
 
 // MARK: - TableViewDelegate Setup
-
 extension DetailsViewController : UITableViewDelegate{
-    
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 60
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 60
         //return UITableViewAutomaticDimension
     }
-    
 }
 
 
