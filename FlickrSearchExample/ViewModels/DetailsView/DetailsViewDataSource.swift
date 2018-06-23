@@ -14,6 +14,9 @@ class DetailsDataSource<T>: NSObject {
 }
 
 class DetailsViewDataSource: DetailsDataSource<DetailModel>,UITableViewDataSource {
+    enum Rows: Int {
+        case headers, body
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -23,9 +26,19 @@ class DetailsViewDataSource: DetailsDataSource<DetailModel>,UITableViewDataSourc
         return data.value.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier:"DetailInformationCell", for: indexPath) as! DetailInformationCell
-        cell.dataValue = data.value[indexPath.row]
-        return cell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier:"DetailViewCell", for: indexPath) as! DetailViewCell
+            cell.dataValue = data.value[indexPath.row]
+            return cell
+            
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier:"DetailInformationCell", for: indexPath) as! DetailInformationCell
+            cell.dataValue = data.value[indexPath.row]
+            return cell
+        }
     }
+    
 }

@@ -27,7 +27,7 @@ class DetailsViewController: UIViewController {
     }
     
     func setupUI() {
-        self.navigationItem.title = selectedData?.title
+        self.navigationItem.title = "Details"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.view.backgroundColor = ThemeColor.white
     }
@@ -58,12 +58,26 @@ class DetailsViewController: UIViewController {
 // MARK: - TableViewDelegate Setup
 extension DetailsViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        switch indexPath.row {
+        case 0:
+            return UITableViewAutomaticDimension
+        default:
+            return 60
+        }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
-        //return UITableViewAutomaticDimension
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
+        switch indexPath.row {
+        case 0:
+            return UITableViewAutomaticDimension
+        default:
+            return 60
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("tapped")
     }
 }
 
