@@ -37,7 +37,7 @@ class PhotosViewController: UIViewController {
         self.dataSource.data.addAndNotify(observer: self) { [weak self] _ in
             self?.collectionView.reloadData()
         }
-        self.methodViewModelService()
+        //self.methodViewModelService()
         self.viewModel.onErrorHandling = { [weak self] error in
             self?.showAlert(title: "An error occured", message: "Oops, something went wrong!")
         }
