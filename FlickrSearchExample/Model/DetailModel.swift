@@ -18,15 +18,22 @@ struct DetailModel{
 }
 
 extension DetailModel{
-    static func setupDetailModel(_ data : PhotosModel) -> [DetailModel]{
-        let body: [DetailModel] = [
-            DetailModel(title: "\(data.title)", description:data.flickrImageURL()),
-            DetailModel(title: "Farm", description: "\(data.farm)"),
-            DetailModel(title: "ID", description: "\(data.id)"),
-            DetailModel(title: "Owner", description: "\(data.owner)"),
-            DetailModel(title: "Secret", description: "\(data.secret)"),
-            DetailModel(title: "Server", description: "\(data.server)"),
-            ]
-        return body
+    static func setupDetailModel(_ data : PhotosModel?) -> [DetailModel]{
+        if let data = data{
+            let body: [DetailModel] = [
+                DetailModel(title: "\(data.title)", description:data.flickrImageURL()),
+                DetailModel(title: "Farm", description: "\(data.farm)"),
+                DetailModel(title: "ID", description: "\(data.id)"),
+                DetailModel(title: "Owner", description: "\(data.owner)"),
+                DetailModel(title: "Secret", description: "\(data.secret)"),
+                DetailModel(title: "Server", description: "\(data.server)"),
+                ]
+            return body
+        } else {
+            let body:[DetailModel] = []
+            return body
+        }
     }
+    
+    
 }
