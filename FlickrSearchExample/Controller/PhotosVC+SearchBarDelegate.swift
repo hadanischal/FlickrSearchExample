@@ -26,7 +26,7 @@ extension PhotosViewController : UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
         // searchActive = false;
-        self.searchBarSearchBegin(searchBar)
+        self.methodFlickerSearch(searchBar.text)
         view.endEditing(true)
     }
     
@@ -34,19 +34,10 @@ extension PhotosViewController : UISearchBarDelegate {
         searchActive = true
     }
     
-    func searchBarSearchBegin(_ searchBar: UISearchBar) {
+    func methodFlickerSearch(_ searchText: String?) {
         if !searchBar.text!.isEmpty {
-            let searchText:String =  searchBar.text!.replacingOccurrences(of: " ", with: "")
-            DispatchQueue.main.async {
-                UIApplication.shared.isNetworkActivityIndicatorVisible = true
-                self.activityIndicator.start()
-                self.viewModel.fetchServiceCall(searchText){ result in
-                    self.activityIndicator.stop()
-                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                    self.searchActive = false
-                    self.collectionView.reloadData()
-                }
-            }
+            let searchText:String =  searchText!.replacingOccurrences(of: " ", with: "")
+            self.methodViewModelService(searchText)
         }else{
             searchActive = false;
         }

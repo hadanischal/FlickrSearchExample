@@ -59,7 +59,7 @@ extension SearchResultsModel : Parceable {
             let result:SearchResultsModel! = SearchResultsModel.init(json: dictionary)
             return Result.success(result)
         } else {
-            return Result.failure(ErrorResult.parser(string: "Unable to parse conversion rate"))
+            return Result.failure(ErrorResult.parser(string: "Unable to parse flickr results"))
         }
     }
 }
