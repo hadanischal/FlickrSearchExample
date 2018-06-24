@@ -7,29 +7,59 @@
 //
 
 import XCTest
+@testable import FlickrSearchExample
 
 class DetailsDataSourceTests: XCTestCase {
-    
+    var dataSource : DetailsViewDataSource!
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        dataSource = DetailsViewDataSource()
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        dataSource = nil
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testEmptyValueInDataSource() {
+        dataSource.data.value = []  // giving empty data value
+        let tableView = UITableView()
+        tableView.dataSource = dataSource
+        XCTAssertEqual(dataSource.numberOfSections(in: tableView), 1, "Expected one section in table view")
+        XCTAssertEqual(dataSource.tableView(tableView, numberOfRowsInSection: 0), 0, "Expected no cell in table view")
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+
+    func testValueInDataSource() {
+        if valuesFromJSON().count != 0{
+            let responseResults:[PhotosModel] = valuesFromJSON()
+            let photoData = responseResults[0]
+            dataSource.data.value = DetailModel.setupDetailModel(photoData)
+            let tableView = UITableView()
+            tableView.dataSource = dataSource
+            XCTAssertEqual(dataSource.numberOfSections(in: tableView), 1, "Expected one section in table view")
+            XCTAssertEqual(dataSource.tableView(tableView, numberOfRowsInSection: 0), 6, "Expected six cell in table view")
+        }else{
+            XCTAssert(false, "Can't get data from FileManager")
         }
     }
     
+    func valuesFromJSON() ->[PhotosModel]{
+        var responseResults = [PhotosModel]()
+        guard let data = FileManager.readJsonFile(forResource: "flickrsample") else {
+            XCTAssert(false, "Can't get data from flickrsample.json")
+            return responseResults
+        }
+        let completion : ((Result<SearchResultsModel, ErrorResult>) -> Void) = { result in
+            switch result {
+            case .failure(_):
+                XCTAssert(false, "Expected valid flickrsample")
+            case .success(let converter):
+                print(converter)
+                responseResults = converter.photoResults
+                break
+            }
+        }
+        ParserHelper.parse(data: data, completion: completion)
+        return responseResults
+    }
 }
