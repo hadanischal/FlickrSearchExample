@@ -50,7 +50,7 @@ class PhotosViewModelTests: XCTestCase {
         }
     }
     
-    func testfetchNoPhotoss() {
+    func testfetchNoPhotos() {
         service.searchData = nil
         viewModel.fetchServiceCall("Initial Test") { (result) in
             switch result {
