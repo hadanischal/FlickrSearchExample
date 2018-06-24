@@ -57,13 +57,13 @@ class PhotosViewDataSourceTests: XCTestCase {
     func valuesFromJSON() ->[PhotosModel]{
         var responseResults = [PhotosModel]()
         guard let data = FileManager.readJsonFile(forResource: "flickrsample") else {
-            XCTAssert(false, "Can't get data from facts.json")
+            XCTAssert(false, "Can't get data from flickrsample.json")
             return responseResults
         }
         let completion : ((Result<SearchResultsModel, ErrorResult>) -> Void) = { result in
             switch result {
             case .failure(_):
-                XCTAssert(false, "Expected valid converter")
+                XCTAssert(false, "Expected valid flickrsample")
             case .success(let converter):
                 print(converter)
                 responseResults = converter.photoResults
