@@ -12,7 +12,7 @@ class  DetailsViewModel {
     // MARK: - Input
     weak var dataSource : DetailsDataSource<DetailModel>?
     
-    init(photoData :PhotosModel?, dataSource :DetailsDataSource<DetailModel>?){
+    init(dataSource :DetailsDataSource<DetailModel>?){
         self.dataSource = dataSource
     }
     
