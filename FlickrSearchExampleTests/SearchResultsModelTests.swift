@@ -52,5 +52,15 @@ class SearchResultsModelTests: XCTestCase {
         ParserHelper.parse(data: data, completion: completion)
      }
 
+    func testWrongKeySearchResults() {
+        let dictionary = ["testObject" : 123 as AnyObject]
+        let result = SearchResultsModel.parseObject(dictionary: dictionary)
+        switch result {
+        case .success(_):
+            XCTAssert(false, "Expected failure when wrong data")
+        default:
+            return
+        }
+    }
 
 }
