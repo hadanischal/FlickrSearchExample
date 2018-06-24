@@ -20,8 +20,9 @@ final class PhotosServiceCall: NetworkHandler, PhotosServiceCallProtocol {
     
     func fetchPhotos(_ searchTerm: String, completion: @escaping ((Result<SearchResultsModel, ErrorResult>) -> Void)) {
         self.cancelFetchService()
-        let parameters : [String: String] = [
-            APIConstants.methodKey:          APIConstants.flickrMethod,
+
+        var parameters : [String: String] = [
+            APIConstants.methodKey:          APIConstants.APIMethods_PhotosSearch,
             APIConstants.apiKey:             APIConstants.apiKeyValue,
             APIConstants.nojsoncallbackKey:  "1",
             APIConstants.formatKey:          "json",
@@ -30,10 +31,14 @@ final class PhotosServiceCall: NetworkHandler, PhotosServiceCallProtocol {
             APIConstants.perPageKey:         APIConstants.limit,
             APIConstants.pageKey:            "1" //Default for now
         ]
-        
+        if searchTerm.isEmpty{
+            parameters[APIConstants.latKey] = APIConstants.latConst
+            parameters[APIConstants.longKey] = APIConstants.lonConst
+            parameters[APIConstants.textKey] = "Nearby"
+        }
+
         task = NetworkService().loadData(urlString: endpoint, parameters: parameters, completion: self.networkResult(completion: completion))
     }
-    
     func cancelFetchService() {
         if let task = task {
             task.cancel()

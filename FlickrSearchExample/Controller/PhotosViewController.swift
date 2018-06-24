@@ -37,8 +37,22 @@ class PhotosViewController: UIViewController {
         self.dataSource.data.addAndNotify(observer: self) { [weak self] _ in
             self?.collectionView.reloadData()
         }
+        //self.methodViewModelService()
         self.viewModel.onErrorHandling = { [weak self] error in
             self?.showAlert(title: "An error occured", message: "Oops, something went wrong!")
+        }
+    }
+    
+    func methodViewModelService(_ searchText: String? = "") {
+        DispatchQueue.main.async {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
+            self.activityIndicator.start()
+            self.viewModel.fetchServiceCall(searchText!){ result in
+                self.activityIndicator.stop()
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                self.searchActive = false
+                self.collectionView.reloadData()
+            }
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

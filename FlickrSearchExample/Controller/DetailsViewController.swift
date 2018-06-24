@@ -14,10 +14,9 @@ class DetailsViewController: UIViewController {
     var selectedData: PhotosModel?
     let dataSource = DetailsViewDataSource()
     lazy var viewModel : DetailsViewModel = {
-        let viewModel = DetailsViewModel(photoData: selectedData, dataSource: dataSource)
+        let viewModel = DetailsViewModel(dataSource: dataSource)
         return viewModel
     }()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

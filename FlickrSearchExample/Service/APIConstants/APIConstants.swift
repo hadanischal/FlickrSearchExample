@@ -10,15 +10,12 @@ import Foundation
 
 struct APIConstants {
      static let baseURLString = "https://api.flickr.com/services/rest"
-//    private static let photoSearch = "flickr.photos.search"
-//    private static let Key = "63f750f7c42662239caa7482194185b4"
 //    private static let Secret = "fd9869de82b522fa?"
-//
-    
-    static let flickrMethod =  "flickr.photos.search"
+
+    //API Methods Name
+    static let APIMethods_PhotosSearch =  "flickr.photos.search"
     static let apiKeyValue  =  "63f750f7c42662239caa7482194185b4"
     static let limit        =  "20"
-    
     static let methodKey =         "method"
     static let apiKey    =         "api_key"
     static let nojsoncallbackKey = "nojsoncallback"
@@ -27,8 +24,8 @@ struct APIConstants {
     static let textKey =           "text"
     static let perPageKey =        "per_page"
     static let pageKey =           "page"
-
-
-    
- 
+    static let latKey =           "lat"
+    static let longKey =           "lon"
+    static let latConst =           "-33.923389"
+    static let lonConst =           "151.058912"
 }
