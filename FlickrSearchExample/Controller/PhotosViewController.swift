@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class PhotosViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
@@ -25,6 +26,7 @@ class PhotosViewController: UIViewController {
         super.viewDidLoad()
         self.setupUI()
         self.setupViewModel()
+        self.setupLocationService()
     }
     
     func setupUI() {
@@ -55,6 +57,7 @@ class PhotosViewController: UIViewController {
             }
         }
     }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailsViewController" {
             let controller = segue.destination as! DetailsViewController
@@ -103,6 +106,27 @@ extension PhotosViewController : UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: UICollectionViewDelegateFlowLayout
+extension PhotosViewController : LocationServiceDelegate {
+    
+    func setupLocationService() {
+        LocationService.sharedInstance.delegate = self
+        LocationService.sharedInstance.startUpdatingLocation()
+    }
+    
+    func tracingLocation(_ currentLocation: CLLocation) {
+        let lat = currentLocation.coordinate.latitude
+        let lon = currentLocation.coordinate.longitude
+        print("lat : \(lat)")
+        print("lon : \(lon)")
+
+     }
+    
+    func tracingLocationDidFailWithError(_ error: Error) {
+        print("tracing Location Error : \(error)")
+    }
+    
+}
 
 
 
