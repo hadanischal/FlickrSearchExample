@@ -10,12 +10,16 @@ import Foundation
 
 final class NetworkService {
     func loadData(urlString: String, parameters: [String : String], session: URLSession = URLSession(configuration: .default), completion: @escaping (Result<Data, ErrorResult>) -> Void) -> URLSessionTask? {
-        var components = URLComponents(string: urlString)!
+        guard let url = URLComponents(string: urlString) else {
+            completion(.failure(.network(string: "Wrong url format")))
+            return nil
+        }        
+        var components:URLComponents = url
         components.queryItems = parameters.map { (key, value) in
             URLQueryItem(name: key, value: value)
         }
         components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
-        print(components.url!)
+        print(components.url ?? "nil url")
         var request = NetworkMethod.request(method: .GET, url: components.url!)
         if let reachability = Reachability(), !reachability.isReachable {
             request.cachePolicy = .returnCacheDataDontLoad

@@ -18,9 +18,11 @@ class DetailViewCell: UITableViewCell {
                 return
             }
             titleLabel?.text = data.title
-            ImageManager.sharedInstance.downloadImageFromURL(data.description!) { (success, image) -> Void in
-                if success && image != nil {
-                    self.photoImageView?.image = image
+            if let imageUrl = data.description{
+                ImageManager.sharedInstance.downloadImageFromURL(imageUrl) { (success, image) -> Void in
+                    if success && image != nil {
+                        self.photoImageView?.image = image
+                    }
                 }
             }
         }

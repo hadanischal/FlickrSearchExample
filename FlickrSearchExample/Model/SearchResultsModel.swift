@@ -54,7 +54,7 @@ struct SearchResultsModel: JSONCompatible {
 }
 extension SearchResultsModel : Parceable {
     static func parseObject(dictionary: [String : AnyObject]) -> Result<SearchResultsModel, ErrorResult> {
-        print(dictionary)
+        //print(dictionary)
         if let dictionary = dictionary["photos"] as? [String:Any]{
             let result:SearchResultsModel! = SearchResultsModel.init(json: dictionary)
             return Result.success(result)

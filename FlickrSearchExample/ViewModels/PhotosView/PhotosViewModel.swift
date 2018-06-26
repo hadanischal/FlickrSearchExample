@@ -16,7 +16,7 @@ class  PhotosViewModel {
     weak var service: PhotosServiceCallProtocol?
     var onErrorHandling : ((ErrorResult?) -> Void)?
     var selectedData: PhotosModel?
-
+    
     init(service: PhotosServiceCallProtocol? = PhotosServiceCall.shared, dataSource : GenericDataSource<PhotosModel>?) {
         self.dataSource = dataSource
         self.service = service
@@ -46,7 +46,9 @@ class  PhotosViewModel {
     }
     
     func presentProfile(_ indexPath: IndexPath, completion: ((PhotosModel) -> Void)? = nil)  {
-        self.selectedData = self.dataSource?.data.value[indexPath.row]
-        completion!(self.selectedData!)
+        if let data = self.dataSource?.data.value[indexPath.row]{
+            self.selectedData = data
+            completion!(data)
+        }
     }
 }

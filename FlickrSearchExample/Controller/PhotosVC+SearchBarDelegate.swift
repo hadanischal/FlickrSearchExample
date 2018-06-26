@@ -35,7 +35,8 @@ extension PhotosViewController : UISearchBarDelegate {
     }
     
     func methodFlickerSearch(_ searchText: String?) {
-        if !searchBar.text!.isEmpty {
+        guard let strText = searchText else {return}
+        if !strText.isEmpty {
             let searchText:String =  searchText!.replacingOccurrences(of: " ", with: "")
             self.methodViewModelService(searchText)
         }else{

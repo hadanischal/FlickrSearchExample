@@ -9,8 +9,8 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
-    var activityIndicator : ActivityIndicator! = ActivityIndicator()
+    @IBOutlet weak var tableView: UITableView?
+    var activityIndicator : ActivityIndicator? = ActivityIndicator()
     var selectedData: PhotosModel?
     let dataSource = DetailsViewDataSource()
     lazy var viewModel : DetailsViewModel = {
@@ -32,24 +32,24 @@ class DetailsViewController: UIViewController {
     }
     
     func setupTableView() {
-        self.tableView.backgroundColor = ThemeColor.tableViewBackgroundColor
+        self.tableView?.backgroundColor = ThemeColor.tableViewBackgroundColor
         self.view.backgroundColor = ThemeColor.tableViewBackgroundColor
-        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        self.tableView?.tableFooterView = UIView(frame: CGRect.zero)
     }
     
     func setupViewModel() {
-        self.tableView.dataSource = self.dataSource
+        self.tableView?.dataSource = self.dataSource
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        self.activityIndicator.start()
+        self.activityIndicator?.start()
         self.viewModel.fetchDataSource(photoData: self.selectedData){ result in
             DispatchQueue.main.async {
-                self.activityIndicator.stop()
+                self.activityIndicator?.stop()
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                self.tableView.reloadData()
+                self.tableView?.reloadData()
             }
         }
         self.dataSource.data.addAndNotify(observer: self) { [weak self] _ in
-            self?.tableView.reloadData()
+            self?.tableView?.reloadData()
         }
     }
 }

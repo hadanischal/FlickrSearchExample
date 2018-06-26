@@ -16,7 +16,6 @@ class NetworkHandler {
                 DispatchQueue.global(qos: .background).async(execute: {
                     switch dataResult {
                     case .success(let data) :
-                        print(data)
                         ParserHelper.parse(data: data, completion: completion)
                         break
                     case .failure(let error) :

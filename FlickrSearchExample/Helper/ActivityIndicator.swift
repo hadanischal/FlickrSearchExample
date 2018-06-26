@@ -51,7 +51,7 @@ class ActivityIndicator: NSObject {
             guard let indicatorView = self.defaultView?.superview?.viewWithTag(1024) as? UIActivityIndicatorView else {
                 let activityIndicator              = UIActivityIndicatorView(activityIndicatorStyle: .white)
                 activityIndicator.frame            = CGRect.zero
-                activityIndicator.center           = (self.defaultView?.center)!
+                activityIndicator.center           = (self.defaultView?.center) ?? CGPoint(x: 0, y: 0)
                 activityIndicator.hidesWhenStopped = true
                 activityIndicator.tag              = 1024
                 activityIndicator.color            = self.tintColor
