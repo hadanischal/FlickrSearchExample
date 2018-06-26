@@ -10,11 +10,11 @@ import UIKit
 import CoreLocation
 
 class PhotosViewController: UIViewController {
-    @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet var collectionView: UICollectionView?
+    @IBOutlet weak var searchBar: UISearchBar?
     fileprivate let sectionInsets = UIEdgeInsets(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0)
     fileprivate let itemsPerRow: CGFloat = 3
-    var activityIndicator : ActivityIndicator! = ActivityIndicator()
+    var activityIndicator : ActivityIndicator? = ActivityIndicator()
     var searchActive : Bool = false
     let dataSource = PhotosViewDataSource()
     lazy var viewModel : PhotosViewModel = {
@@ -35,9 +35,9 @@ class PhotosViewController: UIViewController {
     }
     
     func setupViewModel() {
-        self.collectionView.dataSource = self.dataSource
+        self.collectionView?.dataSource = self.dataSource
         self.dataSource.data.addAndNotify(observer: self) { [weak self] _ in
-            self?.collectionView.reloadData()
+            self?.collectionView?.reloadData()
         }
         //self.methodViewModelService()
         self.viewModel.onErrorHandling = { [weak self] error in
@@ -46,22 +46,23 @@ class PhotosViewController: UIViewController {
     }
     
     func methodViewModelService(_ searchText: String? = "") {
-        DispatchQueue.main.async {
-            UIApplication.shared.isNetworkActivityIndicatorVisible = true
-            self.activityIndicator.start()
-            self.viewModel.fetchServiceCall(searchText!){ result in
-                self.activityIndicator.stop()
+        guard let strText = searchText else {return}
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+            self.activityIndicator?.start()
+            self.viewModel.fetchServiceCall(strText){ result in
+                DispatchQueue.main.async {
+                 self.activityIndicator?.stop()
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 self.searchActive = false
-                self.collectionView.reloadData()
+                self.collectionView?.reloadData()
+                }
             }
-        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailsViewController" {
-            let controller = segue.destination as! DetailsViewController
-            controller.selectedData = viewModel.selectedData
+            let controller = segue.destination as? DetailsViewController
+            controller?.selectedData = viewModel.selectedData
         }
     }
 }
@@ -69,13 +70,15 @@ class PhotosViewController: UIViewController {
 // MARK: UICollectionViewDelegateFlowLayout
 extension PhotosViewController : UICollectionViewDelegateFlowLayout {
     func setupCollectionView() -> Void{
-        let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        guard let layout = self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout else {
+            return
+        }
         layout.scrollDirection = UICollectionViewScrollDirection.vertical
-        self.collectionView.collectionViewLayout = layout
+        self.collectionView?.collectionViewLayout = layout
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
-        self.collectionView.backgroundColor = ThemeColor.white
-        self.collectionView.showsHorizontalScrollIndicator = false
+        self.collectionView?.backgroundColor = ThemeColor.white
+        self.collectionView?.showsHorizontalScrollIndicator = false
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

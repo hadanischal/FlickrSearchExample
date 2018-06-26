@@ -21,9 +21,9 @@ class PhotosViewModelTests: XCTestCase {
         }
     }
     
-    var viewModel : PhotosViewModel!
-    var dataSource : GenericDataSource<PhotosModel>!
-    fileprivate var service : MockPhotosServiceCall!
+    var viewModel : PhotosViewModel?
+    var dataSource : GenericDataSource<PhotosModel>?
+    fileprivate var service : MockPhotosServiceCall?
 
     override func setUp() {
         super.setUp()
@@ -40,8 +40,8 @@ class PhotosViewModelTests: XCTestCase {
     }
     
     func testfetchPhotos() {
-        service.searchData = SearchResultsModel(page: 1, pages: 1, perpage: 1, total: "1", photoResults: [])
-        viewModel.fetchServiceCall("Initial Test") { (result) in
+        service?.searchData = SearchResultsModel(page: 1, pages: 1, perpage: 1, total: "1", photoResults: [])
+        viewModel?.fetchServiceCall("Initial Test") { (result) in
             switch result {
             case .failure(_) :
                 XCTAssert(false, "ViewModel should not be able to fetch without service")
@@ -51,8 +51,8 @@ class PhotosViewModelTests: XCTestCase {
     }
     
     func testfetchNoPhotos() {
-        service.searchData = nil
-        viewModel.fetchServiceCall("Initial Test") { (result) in
+        service?.searchData = nil
+        viewModel?.fetchServiceCall("Initial Test") { (result) in
             switch result {
             case .success(_) :
                 XCTAssert(false, "ViewModel should not be able to fetch")

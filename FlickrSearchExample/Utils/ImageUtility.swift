@@ -17,7 +17,7 @@ public protocol ImageSession: class {
 
 class ImageUtility:ImageSession{
     fileprivate let kLazyLoadCellImageViewTag = 1
-    fileprivate let kLazyLoadPlaceholderImage = UIImage(named: "placeholder")!
+    fileprivate let kLazyLoadPlaceholderImage = UIImage(named: "placeholder")
     var imageManager: ImageManager { return ImageManager() }
     
     func updateImageForCollectionViewCell(_ cell: UICollectionViewCell, inCollectionView collectionView: UICollectionView, imageURL: String, atIndexPath indexPath: IndexPath) {

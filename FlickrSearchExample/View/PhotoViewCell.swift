@@ -9,7 +9,7 @@
 import UIKit
 
 class PhotoViewCell: UICollectionViewCell {
-    @IBOutlet weak var bagroundView: UIView!
+    @IBOutlet weak var bagroundView: UIView?
     @IBOutlet var titleLabel: UILabel?
     @IBOutlet var photoImageView: UIImageView?
     
@@ -29,7 +29,7 @@ class PhotoViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.bagroundView.backgroundColor = ThemeColor.white
+        self.bagroundView?.backgroundColor = ThemeColor.white
         self.photoImageView?.contentMode =   UIViewContentMode.scaleAspectFit
     }
 }

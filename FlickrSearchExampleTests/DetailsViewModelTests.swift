@@ -11,7 +11,7 @@ import XCTest
 
 class DetailsViewModelTests: XCTestCase {
     var photoData: PhotosModel?
-    var viewModel : DetailsViewModel!
+    var viewModel : DetailsViewModel?
     weak var dataSource : DetailsDataSource<DetailModel>?
     
     override func setUp() {
@@ -28,7 +28,7 @@ class DetailsViewModelTests: XCTestCase {
     
     func testfetchDetails() {
          self.photoData = PhotosModel.init(id:"42246828484" , owner: "32889236@N02", secret: "888ac97f4a", server: "1772", farm: 2, title: "Different angle", ispublic: true, isfriend: false, isfamily: false)
-        self.viewModel.fetchDataSource(photoData: photoData) { (result) in
+        self.viewModel?.fetchDataSource(photoData: photoData) { (result) in
             switch result {
             case .failure(_) :
                 XCTAssert(false, "ViewModel should not be able to fetch without viewModel nil")
@@ -39,7 +39,7 @@ class DetailsViewModelTests: XCTestCase {
     
     func testfetchDetailsNoPhotoss() {
         self.photoData = nil
-        self.viewModel.fetchDataSource(photoData: photoData) { (result) in
+        self.viewModel?.fetchDataSource(photoData: photoData) { (result) in
             switch result {
             case .failure(_) :
                 XCTAssert(false, "ViewModel should not be able to fetch")
