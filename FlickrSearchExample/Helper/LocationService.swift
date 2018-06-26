@@ -33,10 +33,10 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         case .notDetermined:
             locationManager.requestAlwaysAuthorization()
         case .denied:
-            print("denied")
+            print("CLLocation denied")
             break
         case .authorizedAlways:
-            print("authorizedAlways")
+            print("CLLocation authorizedAlways")
             break
         default:
             break
