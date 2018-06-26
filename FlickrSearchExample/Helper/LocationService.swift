@@ -47,7 +47,7 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         
     }
     //showAlert("Location services were previously denied. Please enable location services for this app in Settings.")
-
+    
     func startUpdatingLocation() {
         print("Starting Location Updates")
         self.locationManager?.startUpdatingLocation()
@@ -64,15 +64,18 @@ class LocationService: NSObject, CLLocationManagerDelegate {
             return
         }
         // singleton for get last location
-        self.lastLocation = location
-        // use for real time update location
-        updateLocation(location)
+        if let _ = self.lastLocation{
+            print("if")
+        }else{
+            print("else")
+            self.lastLocation = location // use for real time update location
+            updateLocation(location)
+        }
         self.locationManager?.stopUpdatingLocation()
-
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        // do on error
         updateLocationDidFailWithError(error)
     }
     

@@ -39,7 +39,9 @@ class PhotosViewController: UIViewController {
         self.dataSource.data.addAndNotify(observer: self) { [weak self] _ in
             self?.collectionView?.reloadData()
         }
-        //self.methodViewModelService()
+        if let _ = LocationService.sharedInstance.lastLocation{
+            self.methodViewModelService()
+        }
         self.viewModel.onErrorHandling = { [weak self] error in
             self?.showAlert(title: "An error occured", message: "Oops, something went wrong!")
         }
@@ -48,17 +50,17 @@ class PhotosViewController: UIViewController {
     func methodViewModelService(_ searchText: String? = "") {
         guard let strText = searchText else {return}
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-            self.activityIndicator?.start()
-            self.viewModel.fetchServiceCall(strText){ result in
-                DispatchQueue.main.async {
-                 self.activityIndicator?.stop()
+        self.activityIndicator?.start()
+        self.viewModel.fetchServiceCall(strText){ result in
+            DispatchQueue.main.async {
+                self.activityIndicator?.stop()
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 self.searchActive = false
                 self.collectionView?.reloadData()
-                }
             }
+        }
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailsViewController" {
             let controller = segue.destination as? DetailsViewController
@@ -122,13 +124,15 @@ extension PhotosViewController : LocationServiceDelegate {
         let lon = currentLocation.coordinate.longitude
         print("lat : \(lat)")
         print("lon : \(lon)")
-
-     }
+        self.methodViewModelService()
+    }
     
     func tracingLocationDidFailWithError(_ error: Error) {
         print("tracing Location Error : \(error)")
+         let message = error.localizedDescription//{
+            self.showAlert(title: "tracing Location Error" , message: message)
+        //}
     }
-    
 }
 
 

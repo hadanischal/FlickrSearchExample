@@ -31,9 +31,13 @@ final class PhotosServiceCall: NetworkHandler, PhotosServiceCallProtocol {
             APIConstants.perPageKey:         APIConstants.limit,
             APIConstants.pageKey:            "1" //Default for now
         ]
+
         if searchTerm.isEmpty{
-            parameters[APIConstants.latKey] = APIConstants.latConst
-            parameters[APIConstants.longKey] = APIConstants.lonConst
+            guard let location = LocationService.sharedInstance.lastLocation else {
+                return
+            }
+            parameters[APIConstants.latKey] = "\(location.coordinate.latitude)" //APIConstants.latConst
+            parameters[APIConstants.longKey] = "\(location.coordinate.longitude)" // APIConstants.lonConst
             parameters[APIConstants.textKey] = "Nearby"
         }
 
