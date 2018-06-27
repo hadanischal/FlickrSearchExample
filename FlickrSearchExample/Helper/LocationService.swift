@@ -10,15 +10,15 @@ import Foundation
 import CoreLocation
 
 protocol LocationServiceDelegate {
-    func tracingLocation(_ currentLocation: CLLocation)
-    func tracingLocationDidFailWithError(_ error: Error)
+    func locationDidUpdate(_ currentLocation: CLLocation)
+    func locationDidFail(_ error: Error)
 }
 
 class LocationService: NSObject, CLLocationManagerDelegate {
     static let sharedInstance = LocationService()
+    var delegate: LocationServiceDelegate?
     var locationManager: CLLocationManager?
     var lastLocation: CLLocation?
-    var delegate: LocationServiceDelegate?
     
     override init() {
         super.init()
@@ -78,13 +78,13 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         guard let delegate = self.delegate else {
             return
         }
-        delegate.tracingLocation(currentLocation)
+        delegate.locationDidUpdate(currentLocation)
     }
     
     private func updateLocationDidFailWithError(_ error: Error) {
         guard let delegate = self.delegate else {
             return
         }
-        delegate.tracingLocationDidFailWithError(error)
+        delegate.locationDidFail(error)
     }
 }
