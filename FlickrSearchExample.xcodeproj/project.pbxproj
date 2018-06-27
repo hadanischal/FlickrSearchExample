@@ -50,6 +50,7 @@
 		AF1B2D6620DDD02A00BB0259 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1B2D6520DDD02A00BB0259 /* DetailsViewController.swift */; };
 		AF1B2D6A20DDD32000BB0259 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1B2D6920DDD32000BB0259 /* DetailsViewModel.swift */; };
 		AF1B2D6C20DDD33300BB0259 /* DetailsViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1B2D6B20DDD33300BB0259 /* DetailsViewDataSource.swift */; };
+		AF4ACA7920E3ACC600D1F507 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4ACA7820E3ACC600D1F507 /* Utility.swift */; };
 		AFC2043620DDEC8500FF5D3F /* DetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2043520DDEC8500FF5D3F /* DetailViewCell.swift */; };
 		AFF3EAD720DC923800D37692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3EAD620DC923800D37692 /* AppDelegate.swift */; };
 		AFF3EAD920DC923800D37692 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3EAD820DC923800D37692 /* ViewController.swift */; };
@@ -122,6 +123,7 @@
 		AF1B2D6520DDD02A00BB0259 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		AF1B2D6920DDD32000BB0259 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		AF1B2D6B20DDD33300BB0259 /* DetailsViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewDataSource.swift; sourceTree = "<group>"; };
+		AF4ACA7820E3ACC600D1F507 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		AFC2043520DDEC8500FF5D3F /* DetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCell.swift; sourceTree = "<group>"; };
 		AFF3EAD320DC923700D37692 /* FlickrSearchExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrSearchExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF3EAD620DC923800D37692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				AF1B2D6320DDCAC600BB0259 /* ImageUtility.swift */,
+				AF4ACA7820E3ACC600D1F507 /* Utility.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 				AF01835820DCFA25001634B4 /* UIColor.swift in Sources */,
 				AF01835620DCF994001634B4 /* PhotosViewDataSource.swift in Sources */,
 				AF1634CC20DCBCA700D623E4 /* PhotosViewController.swift in Sources */,
+				AF4ACA7920E3ACC600D1F507 /* Utility.swift in Sources */,
 				AF1B2D6A20DDD32000BB0259 /* DetailsViewModel.swift in Sources */,
 				AF01834020DCD15E001634B4 /* NetworkHandler.swift in Sources */,
 				AF01835A20DCFEEF001634B4 /* UIViewController.swift in Sources */,

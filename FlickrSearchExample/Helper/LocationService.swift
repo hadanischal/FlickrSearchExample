@@ -15,7 +15,6 @@ protocol LocationServiceDelegate {
 }
 
 class LocationService: NSObject, CLLocationManagerDelegate {
-    
     static let sharedInstance = LocationService()
     var locationManager: CLLocationManager?
     var lastLocation: CLLocation?
@@ -23,7 +22,6 @@ class LocationService: NSObject, CLLocationManagerDelegate {
     
     override init() {
         super.init()
-        // setup locationManager
         self.locationManager = CLLocationManager()
         guard let locationManager = self.locationManager else {
             return
@@ -33,10 +31,10 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         case .notDetermined:
             locationManager.requestAlwaysAuthorization()
         case .denied:
-            print("CLLocation denied")
+            print("LocationManager Location denied")
             break
         case .authorizedAlways:
-            print("CLLocation authorizedAlways")
+            print("LocationManager Location authorizedAlways")
             break
         default:
             break
@@ -46,7 +44,6 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         
     }
-    //showAlert("Location services were previously denied. Please enable location services for this app in Settings.")
     
     func startUpdatingLocation() {
         print("Starting Location Updates")
@@ -58,12 +55,10 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         self.locationManager?.stopUpdatingLocation()
     }
     
-    // CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else {
             return
         }
-        // singleton for get last location
         if let _ = self.lastLocation{
             print("if")
         }else{
@@ -79,7 +74,6 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         updateLocationDidFailWithError(error)
     }
     
-    // Private function
     private func updateLocation(_ currentLocation: CLLocation){
         guard let delegate = self.delegate else {
             return
