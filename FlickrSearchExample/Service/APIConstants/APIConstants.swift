@@ -26,6 +26,4 @@ struct APIConstants {
     static let pageKey =           "page"
     static let latKey =           "lat"
     static let longKey =           "lon"
-    static let latConst =           "-33.923389"
-    static let lonConst =           "151.058912"
 }

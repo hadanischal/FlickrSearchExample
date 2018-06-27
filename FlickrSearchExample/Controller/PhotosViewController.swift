@@ -87,7 +87,6 @@ extension PhotosViewController : UICollectionViewDelegateFlowLayout {
         self.viewModel.presentProfile(indexPath) { (Result) in
             self.performSegue(withIdentifier: "toDetailsViewController", sender: self)
         }
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
@@ -111,27 +110,19 @@ extension PhotosViewController : UICollectionViewDelegateFlowLayout {
     }
 }
 
-// MARK: UICollectionViewDelegateFlowLayout
+// MARK: LocationServiceDelegate
 extension PhotosViewController : LocationServiceDelegate {
-    
     func setupLocationService() {
         LocationService.sharedInstance.delegate = self
         LocationService.sharedInstance.startUpdatingLocation()
     }
     
-    func tracingLocation(_ currentLocation: CLLocation) {
-        let lat = currentLocation.coordinate.latitude
-        let lon = currentLocation.coordinate.longitude
-        print("lat : \(lat)")
-        print("lon : \(lon)")
+    func locationDidUpdate(_ currentLocation: CLLocation) {
         self.methodViewModelService()
     }
     
-    func tracingLocationDidFailWithError(_ error: Error) {
+    func locationDidFail(_ error: Error) {
         print("tracing Location Error : \(error)")
-         let message = error.localizedDescription//{
-            self.showAlert(title: "tracing Location Error" , message: message)
-        //}
     }
 }
 
