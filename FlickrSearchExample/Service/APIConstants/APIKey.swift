@@ -9,7 +9,6 @@
 import Foundation
 
 struct APIKey {
- 
     static let methodKey = "method"
     static let apiKey = "api_key"
     static let nojsoncallbackKey = "nojsoncallback"
@@ -20,5 +19,4 @@ struct APIKey {
     static let pageKey = "page"
     static let latKey = "lat"
     static let longKey = "lon"
-
 }
