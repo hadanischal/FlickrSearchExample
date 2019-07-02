@@ -10,20 +10,20 @@ import Foundation
 
 class  PhotosViewModel {
     // MARK: - Input
-    weak var dataSource : GenericDataSource<PhotosModel>?
-    
+    weak var dataSource: GenericDataSource<PhotosModel>?
+
     // MARK: - Output
     weak var service: PhotosServiceCallProtocol?
-    var onErrorHandling : ((ErrorResult?) -> Void)?
+    var onErrorHandling: ((ErrorResult?) -> Void)?
     var selectedData: PhotosModel?
-    
-    init(service: PhotosServiceCallProtocol? = PhotosServiceCall.shared, dataSource : GenericDataSource<PhotosModel>?) {
+
+    init(service: PhotosServiceCallProtocol? = PhotosServiceCall.shared, dataSource: GenericDataSource<PhotosModel>?) {
         self.dataSource = dataSource
         self.service = service
     }
-    
+
     func fetchServiceCall(_ searchTerm: String, completion: ((Result<Bool, ErrorResult>) -> Void)? = nil) {
-        
+
         guard let service = service else {
             onErrorHandling?(ErrorResult.custom(string: "Missing service"))
             return
@@ -32,8 +32,14 @@ class  PhotosViewModel {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let converter) :
-                    self.dataSource?.data.value = converter.photoResults
-                    completion?(Result.success(true))
+                    if let results = converter.photos?.photo {
+                        self.dataSource?.data.value = results
+                        completion?(Result.success(true))
+                    } else {
+                        self.onErrorHandling?(ErrorResult.parser(string: "unable to parse"))
+                        completion?(Result.failure(ErrorResult.parser(string: "unable to parse")))
+                    }
+
                     break
                 case .failure(let error) :
                     print("Parser error \(error)")
@@ -44,9 +50,9 @@ class  PhotosViewModel {
             }
         }
     }
-    
-    func presentProfile(_ indexPath: IndexPath, completion: ((PhotosModel) -> Void)? = nil)  {
-        if let data = self.dataSource?.data.value[indexPath.row]{
+
+    func presentProfile(_ indexPath: IndexPath, completion: ((PhotosModel) -> Void)? = nil) {
+        if let data = self.dataSource?.data.value[indexPath.row] {
             self.selectedData = data
             completion!(data)
         }

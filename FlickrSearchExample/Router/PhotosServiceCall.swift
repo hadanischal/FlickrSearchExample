@@ -15,13 +15,13 @@ protocol PhotosServiceCallProtocol: class {
 final class PhotosServiceCall: NetworkHandler, PhotosServiceCallProtocol {
     static let shared = PhotosServiceCall()
     let endpoint = APIConstants.baseURLString
-    
-    var task : URLSessionTask?
-    
+
+    var task: URLSessionTask?
+
     func fetchPhotos(_ searchTerm: String, completion: @escaping ((Result<SearchResultsModel, ErrorResult>) -> Void)) {
         self.cancelFetchService()
 
-        var parameters : [String: String] = [
+        var parameters: [String: String] = [
             APIKey.methodKey: APIConstants.APIMethods_PhotosSearch,
             APIKey.apiKey: APIConstants.apiKeyValue,
             APIKey.nojsoncallbackKey: "1",
@@ -32,7 +32,7 @@ final class PhotosServiceCall: NetworkHandler, PhotosServiceCallProtocol {
             APIKey.pageKey: "1" //Default for now
         ]
 
-        if searchTerm.isEmpty{
+        if searchTerm.isEmpty {
             guard let location = LocationService.sharedInstance.lastLocation else {
                 return
             }
@@ -50,4 +50,3 @@ final class PhotosServiceCall: NetworkHandler, PhotosServiceCallProtocol {
         task = nil
     }
 }
-

@@ -17,16 +17,14 @@ class PhotosViewDataSource: GenericDataSource<PhotosModel>, UICollectionViewData
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.value.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoViewCell", for: indexPath) as! PhotoViewCell
         cell.photosValue = self.data.value[indexPath.row]
         return cell
     }
 }
-
- 

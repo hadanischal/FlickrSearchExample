@@ -11,14 +11,14 @@ import UIKit
 class DetailViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel?
     @IBOutlet var photoImageView: UIImageView?
-    
-    var dataValue : DetailModel? {
+
+    var dataValue: DetailModel? {
         didSet {
             guard let data = dataValue else {
                 return
             }
             titleLabel?.text = data.title
-            if let imageUrl = data.description{
+            if let imageUrl = data.description {
                 ImageManager.sharedInstance.downloadImageFromURL(imageUrl) { (success, image) -> Void in
                     if success && image != nil {
                         self.photoImageView?.image = image
@@ -27,9 +27,9 @@ class DetailViewCell: UITableViewCell {
             }
         }
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.photoImageView?.contentMode =   UIViewContentMode.scaleAspectFit
+        self.photoImageView?.contentMode =   UIView.ContentMode.scaleAspectFit
     }
 }
