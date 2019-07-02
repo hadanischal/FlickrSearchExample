@@ -10,9 +10,9 @@ import XCTest
 @testable import FlickrSearchExample
 
 class PhotosServiceCallTests: XCTestCase {
-    
+
     func testCancelRequest() {
-        let service : PhotosServiceCall! = PhotosServiceCall()
+        let service: PhotosServiceCall! = PhotosServiceCall()
         service.fetchPhotos("test") { (_) in
         }
         service.cancelFetchService()

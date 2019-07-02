@@ -15,30 +15,30 @@ protocol PhotosServiceCallProtocol: class {
 final class PhotosServiceCall: NetworkHandler, PhotosServiceCallProtocol {
     static let shared = PhotosServiceCall()
     let endpoint = APIConstants.baseURLString
-    
-    var task : URLSessionTask?
-    
+
+    var task: URLSessionTask?
+
     func fetchPhotos(_ searchTerm: String, completion: @escaping ((Result<SearchResultsModel, ErrorResult>) -> Void)) {
         self.cancelFetchService()
 
-        var parameters : [String: String] = [
-            APIConstants.methodKey:          APIConstants.APIMethods_PhotosSearch,
-            APIConstants.apiKey:             APIConstants.apiKeyValue,
-            APIConstants.nojsoncallbackKey:  "1",
-            APIConstants.formatKey:          "json",
-            APIConstants.safeSearchKey:      "1",
-            APIConstants.textKey:            searchTerm,
-            APIConstants.perPageKey:         APIConstants.limit,
-            APIConstants.pageKey:            "1" //Default for now
+        var parameters: [String: String] = [
+            APIKey.methodKey: APIConstants.APIMethods_PhotosSearch,
+            APIKey.apiKey: APIConstants.apiKeyValue,
+            APIKey.nojsoncallbackKey: "1",
+            APIKey.formatKey: "json",
+            APIKey.safeSearchKey: "1",
+            APIKey.textKey: searchTerm,
+            APIKey.perPageKey: APIConstants.limit,
+            APIKey.pageKey: "1" //Default for now
         ]
 
-        if searchTerm.isEmpty{
+        if searchTerm.isEmpty {
             guard let location = LocationService.sharedInstance.lastLocation else {
                 return
             }
-            parameters[APIConstants.latKey] = "\(location.coordinate.latitude)" //APIConstants.latConst
-            parameters[APIConstants.longKey] = "\(location.coordinate.longitude)" // APIConstants.lonConst
-            parameters[APIConstants.textKey] = "Nearby"
+            parameters[APIKey.latKey] = "\(location.coordinate.latitude)"
+            parameters[APIKey.longKey] = "\(location.coordinate.longitude)"
+            parameters[APIKey.textKey] = "Nearby"
         }
 
         task = NetworkService().loadData(urlString: endpoint, parameters: parameters, completion: self.networkResult(completion: completion))
@@ -50,4 +50,3 @@ final class PhotosServiceCall: NetworkHandler, PhotosServiceCallProtocol {
         task = nil
     }
 }
-
