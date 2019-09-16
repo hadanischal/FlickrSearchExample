@@ -6,7 +6,6 @@
 //  Copyright © 2018 NischalHada. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class GenericDataSource<T>: NSObject {
@@ -23,7 +22,7 @@ class PhotosViewDataSource: GenericDataSource<PhotosModel>, UICollectionViewData
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoViewCell", for: indexPath) as! PhotoViewCell
+        let cell: PhotoViewCell = collectionView.dequeueReusableCell(for: indexPath)
         cell.photosValue = self.data.value[indexPath.row]
         return cell
     }

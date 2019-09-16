@@ -28,14 +28,21 @@ class DetailsViewDataSource: DetailsDataSource<DetailModel>, UITableViewDataSour
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        switch indexPath.row {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DetailViewCell", for: indexPath) as! DetailViewCell
+        let type = DetailsType(rawValue: indexPath.row)
+        switch type {
+        case .imageCell?:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailViewCell", for: indexPath) as? DetailViewCell else {
+                assertionFailure("DetailViewCell does not exist")
+                return UITableViewCell()
+            }
             cell.dataValue = data.value[indexPath.row]
             return cell
 
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DetailInformationCell", for: indexPath) as! DetailInformationCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailInformationCell", for: indexPath) as? DetailInformationCell else {
+                assertionFailure("DetailViewCell does not exist")
+                return UITableViewCell()
+            }
             cell.dataValue = data.value[indexPath.row]
             return cell
         }
