@@ -33,6 +33,3 @@ class PhotoViewCell: UICollectionViewCell {
         self.photoImageView?.contentMode =   UIView.ContentMode.scaleAspectFit
     }
 }
-
-extension PhotoViewCell: ReusableView {
-}
