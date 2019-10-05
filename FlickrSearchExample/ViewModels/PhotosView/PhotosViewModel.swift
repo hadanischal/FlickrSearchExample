@@ -22,7 +22,8 @@ class  PhotosViewModel {
         self.service = service
     }
 
-    func fetchServiceCall(_ searchTerm: String, completion: ((Result<Bool, ErrorResult>) -> Void)? = nil) {
+    func fetchServiceCall(_ searchTerm: String,
+                          completion: ((Result<Bool, ErrorResult>) -> Void)? = nil) {
 
         guard let service = service else {
             onErrorHandling?(ErrorResult.custom(string: "Missing service"))
@@ -51,7 +52,8 @@ class  PhotosViewModel {
         }
     }
 
-    func presentProfile(_ indexPath: IndexPath, completion: ((PhotosModel) -> Void)? = nil) {
+    func presentProfile(_ indexPath: IndexPath,
+                        completion: ((PhotosModel) -> Void)? = nil) {
         if let data = self.dataSource?.data.value[indexPath.row] {
             self.selectedData = data
             completion!(data)

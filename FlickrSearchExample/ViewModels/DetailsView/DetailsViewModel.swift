@@ -16,7 +16,8 @@ class  DetailsViewModel {
         self.dataSource = dataSource
     }
 
-    func fetchDataSource(photoData: PhotosModel?, completion: ((Result<Bool, ErrorResult>) -> Void)? = nil) {
+    func fetchDataSource(photoData: PhotosModel?,
+                         completion: ((Result<Bool, ErrorResult>) -> Void)? = nil) {
         self.dataSource?.data.value = DetailModel.setupDetailModel(photoData)
         completion?(Result.success(true))
     }

@@ -16,4 +16,11 @@ extension ReusableView where Self: UIView {
     static var defaultReuseIdentifier: String {
         return String(describing: self) + "Identifier"
     }
+    static var reuseIdentifier: String {
+        return String(describing: self)
+    }
 }
+
+
+extension UICollectionViewCell: ReusableView { }
+extension UITableViewCell: ReusableView { }
